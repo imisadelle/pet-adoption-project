@@ -42,6 +42,7 @@ class Details extends Component {
                 </div>
 
               </div>
+    
             </div>
         );
     }
