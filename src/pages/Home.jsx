@@ -28,11 +28,10 @@ import Card from 'react-bootstrap/Card'
                     </p>
                 </Jumbotron>
                 </div>
-      
-             </div>
-            
+            </div>   
+
                 );
       }
- 
+
 
 export default Home;
