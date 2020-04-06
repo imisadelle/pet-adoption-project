@@ -6,17 +6,19 @@ import Pug from '../images/pug.jpg'
 class Details extends Component {
 
   state = {
-    breed: ''
+    name: '',
+    bred_for: '',
+    temperament: '',
+    breed_group: ''
   }
 
   componentDidMount() {
     axios.get('https://api.thedogapi.com/v1/breeds')
       .then( response => {
-          let data = response.data[3].name
-          console.log(data)
+          let data = response.data[0]
+          this.setState( data )
       })
   }
-
 
     render() {
         return (
@@ -41,8 +43,10 @@ class Details extends Component {
                   </div>
 
                   <div className='breed-facts-container'>
-                    <div className='breed-facts-title'>DOGBREED are:</div>
-                    <div className='breed-facts'>High Energy, Shedds, Small, and Breathing Issues</div>
+                    <div className='breed-facts-title'>{this.state.name}s are:</div>
+                    <div className='breed-facts'>Bred for: {this.state.bred_for}</div>
+                    <div className='breed-facts'>Temperament: {this.state.temperament}</div>
+                    <div className='breed-facts'>Breed Group: {this.state.breed_group}</div>
                   </div>
                 </div>
               </div>
