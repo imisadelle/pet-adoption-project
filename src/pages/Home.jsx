@@ -6,7 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
-
+// import PetCategories from './components/PetCategories'
+// import AdoptionStories from './components/AdoptionStories';
+import { Container } from 'react-bootstrap';
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+//   } from "react-router-dom";
 
 // class Home extends Component {
 //     render() {
@@ -27,11 +35,15 @@ import Card from 'react-bootstrap/Card'
                     <Button variant="primary">Learn more</Button>
                     </p>
                 </Jumbotron>
+                {/* <PetCategories /> */}
+                {/* <AdoptionStories /> */}
                 </div>
+                 
             </div>   
 
                 );
       }
 
+     
 
 export default Home;
