@@ -65,6 +65,7 @@
 
 .breed-facts-title {
   font-size: 25px;
+  align-self: center;
 }
 
 .breed-facts {
@@ -82,4 +83,5 @@ button {
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 2px 1px 5px;
+  font-size: 20px;
 }
