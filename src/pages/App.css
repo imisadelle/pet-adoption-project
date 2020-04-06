@@ -1,4 +1,4 @@
-.Jumbotron {
+.jumbotron {
     background-image: url(https://www.realestate-tokyo.com/media/5938/animal-shelter2.jpg);   
     background-repeat: no-repeat, repeat; 
     background-position: center;
@@ -12,18 +12,29 @@
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
     }
  
-.Jumbotron h1, p {
+.jumbotron h1, p {
     background-color: #ffffff73;
     padding: 50px;
     } 
     
+
+    /* sampe code from user able to displa two images in jumbotron: https://stackoverflow.com/questions/34755351/multiple-background-images-with-different-heights  */
+    /* .jumbotron {
+        background-image: url("bottom.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: 50% 0%;
+        height: 350px;
+        pointer-events: none;
+   }
+   
+   .png-layer {
+        background-image: url("top.png");
+        height: 500px;
+        margin-top: -350px;
+   }
+   .content {
+        margin-top: -200px;
+   } */
     
-    /* background-color: #282c34;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-        color: white;
-} */
