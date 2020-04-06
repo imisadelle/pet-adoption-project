@@ -1,0 +1,66 @@
+.page {
+  background-color: #5B7444;
+  height: 100vh;
+}
+
+.dog {
+  font-size: 90px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  margin: 9rem 5rem;
+  background-color: #A3C586;
+}
+
+.left-container {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-right: 3px solid #47697E;
+
+}
+
+.profile-pic {
+  width: 80%;
+  justify-self: end;
+}
+
+.bio {
+  align-self: center;
+}
+
+.right-container {
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+}
+
+.dog-facts-container {
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+.dog-facts-title {
+  align-self: center;
+}
+
+.breed-facts-container {
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  background-color: #FCF1D1;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 5px;
+}
