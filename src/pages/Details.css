@@ -10,7 +10,7 @@
 .profile-container {
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  margin: 5rem 5rem;
+  margin: 5rem 15rem;
   background-color: #A3C586;
   padding: 3%;
   border-radius: 5px;
@@ -19,9 +19,8 @@
 .left-container {
   grid-column: 1;
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 55% 40%;
   border-right: 3px solid #47697E;
-
 }
 
 .profile-pic {
@@ -49,8 +48,8 @@
 }
 
 .dog-facts-title {
-  align-self: center;
   font-size: 25px;
+  font-weight: bold;
 }
 
 .dog-facts {
@@ -66,6 +65,7 @@
 .breed-facts-title {
   font-size: 25px;
   align-self: center;
+  font-weight: bold;
 }
 
 .breed-facts {
