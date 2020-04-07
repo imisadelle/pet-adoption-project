@@ -18,6 +18,10 @@ import { Container } from 'react-bootstrap';
 
 // class Home extends Component {
 //     render() {
+import CardDeck from 'react-bootstrap/CardDeck'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+
 
     function Home() {
         return (
@@ -35,8 +39,78 @@ import { Container } from 'react-bootstrap';
                     <Button variant="primary">Learn more</Button>
                     </p>
                 </Jumbotron>
-                {/* <PetCategories /> */}
-                {/* <AdoptionStories /> */}
+                <CardDeck>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Dogs</Card.Title>
+                    <Card.Text>
+                        Woof! Adopt DOGS because, This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Rescue a Dog</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Cats</Card.Title>
+                    <Card.Text>
+                        Meow! Adopt CATS because, This card has supporting text below as a natural lead-in to additional
+                        content.{' '}
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Rescue a Cat</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Birds</Card.Title>
+                    <Card.Text>
+                        Tweet, Tweet! Adopt a BIRD because, This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This card has even longer content than the first to
+                        show that equal height action.
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Rescue a bird</small>
+                    </Card.Footer>
+                </Card>
+                <Card>
+                    <Card.Img variant="top" src="holder.js/100px160" />
+                    <Card.Body>
+                    <Card.Title>Small and Furry</Card.Title>
+                    <Card.Text>
+                        Look no further for a small and furry lovable pet. These animals are waiting for the right person to open their heart and home to the wonders of resucing an itty, bitty, creature of love. 
+                    </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                    <small className="text-muted">Rescue a small and furry critter</small>
+                    </Card.Footer>
+                </Card>
+            </CardDeck>
+            <div>
+                <hr>
+                </hr>
+                <Container>
+                <Row>
+                    <Col xs={6}>Image 1</Col>
+                    <Col xs={6}>Story 1</Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>Story 2</Col>
+                    <Col xs={6}>Image 2</Col>
+                </Row>
+                <Row>
+                    <Col xs={6}>Image 3</Col>
+                    <Col xs={6}>Story 3</Col>
+                </Row>
+                </Container>
+                </div>
                 </div>
                  
             </div>   
