@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Sponsor from '../components/Sponsor'
 import './Details.css'
 import Pug from '../images/pug.jpg'
 import Bone from '../images/bone.png'
@@ -26,7 +27,6 @@ class Details extends Component {
     render() {
         return (
             <div className='page'>
-              <div className='dog'>Dog Profile</div>
 
               <div className='center-container'>
                 <div className='profile-container'>
@@ -61,15 +61,15 @@ class Details extends Component {
                   <div className='product-img-container'>
                     <div className='product1'>
                       <img src={Bone} alt='plastic bone' className='product'></img>
-                      <div>Bone</div>
+                      <div className='product-toy'>Bone</div>
                     </div>
                     <div className='product2'>
                       <img src={Rope} alt='rope toy' className='product'></img>
-                      <div>Rope</div>
+                      <div className='product-toy'>Rope</div>
                     </div>
                     <div className='product3'>
                       <img src={Ball} alt='plastic ball' className='product'></img>
-                      <div>Ball</div>
+                      <div className='product-toy'>Ball</div>
                     </div>
                   </div>
                 </div>
@@ -82,6 +82,10 @@ class Details extends Component {
                   <div className='visit-button-container'>
                     <button>Schedule Virtual Visit</button>
                   </div>
+                </div>
+
+                <div className='sponsor'>
+                  <Sponsor />
                 </div>
               </div>
             </div>

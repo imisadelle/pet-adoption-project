@@ -1,10 +1,6 @@
 .page {
   background-color: #5B7444;
-  height: 100vh;
-}
-
-.dog {
-  font-size: 90px;
+  height: 100%;
 }
 
 .center-container {
@@ -80,23 +76,33 @@
 }
 
 .products-container {
-  justify-self: center;
   background-color: #FCF1D1;
   grid-area: 2 / 4 / 5 / 5;
 }
 
 .product {
-  width: 30%;
+  width: 60%;
+  margin-left: 2rem;
+  margin-top: 3rem;
 }
 
 .product-title {
   font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-toy {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .button-container {
   grid-area: 3 / 2 / 4 / 3;
   display: flex;
   justify-content: space-evenly;
+  align-self: center;
 }
 
 button {
@@ -106,4 +112,8 @@ button {
   border-radius: 5px;
   box-shadow: 2px 1px 5px;
   font-size: 20px;
+}
+
+.sponsor {
+  grid-area: 4 / 2 / 5 / 3;
 }
