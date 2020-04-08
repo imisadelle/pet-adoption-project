@@ -4,7 +4,8 @@ import {
     Nav,
     Form,
     FormControl,
-    Button 
+    Button,
+    NavDropdown
   }from 'react-bootstrap/'
   import {
     BrowserRouter as Router,
@@ -13,30 +14,33 @@ import {
     Switch,
   } from 'react-router-dom';
 //   import { LinkContainer } from "react-router-bootstrap"; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fa-paw" } from '@fortawesome/free-regular-svg-icons'
-import './NavBar.css'
-import axios from 'axios';
+
 
 const NavBar = () => {
 
-    return (
-    <Router>
-    <Navbar bg="dark" variant="dark">
-    <Navbar fixed="top" />
-    <FontAwesomeIcon icon={fa-paw} style={{color: "yellow"}}></FontAwesomeIcon>
-    <Navbar.Brand href="/">Food</Navbar.Brand>
-    <Nav className="mr-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/about">About Us</Nav.Link>
-        <Nav.Link href="/random">Resources</Nav.Link>
-        <Nav.Link href="/favorites">Pet Categories</Nav.Link>
-        </Nav>
-    </Navbar> 
-    </Router>
-    );
+    return(
+        <Navbar bg="light" expand="lg">
+            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/about">About Us</Nav.Link>
+                <Nav.Link href="/random">Pet Lookup</Nav.Link>
+                <Nav.Link href="/favorites">Pet Details</Nav.Link>
+                <Nav.Link href="/favorites">Schedule Visit</Nav.Link>
+                <NavDropdown title="Resources" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="#action/3.1">Spay and Neuter</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="#action/3.2">Care Options</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">Playtime</NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.4">Success Stories</NavDropdown.Item>
+                </NavDropdown>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    )
 }
-
 
 export default NavBar;
 

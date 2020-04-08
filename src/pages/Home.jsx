@@ -86,6 +86,7 @@ function Home() {
                 </Card.Footer>
             </Card>
         </CardDeck>
+        
         <div>
             <hr>
             </hr>
