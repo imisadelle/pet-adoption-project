@@ -8,12 +8,11 @@ import Visit from './pages/Visit'
 function App() {
   return (
     <div> 
-    <Home/>
-    <About/>
-    <Master/>
-    <Details/>
-    <Visit/>
-
+      <Home/>
+      <About/>
+      <Master/>
+      <Details/>
+      <Visit/>
     </div>
   );
 }
