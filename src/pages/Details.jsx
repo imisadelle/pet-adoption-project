@@ -73,19 +73,17 @@ class Details extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div className='button-container'>
-                <div className='adopt-button-container'>
-                  <button>Adopt Me</button>
+                  <div className='button-container'>
+                  <div className='adopt-button-container'>
+                    <button>Adopt Me</button>
+                  </div>
+
+                  <div className='visit-button-container'>
+                    <button>Schedule Virtual Visit</button>
+                  </div>
                 </div>
-
-                <div className='visit-button-container'>
-                  <button>Schedule Virtual Visit</button>
-                </div>
-
               </div>
-    
             </div>
         );
     }
