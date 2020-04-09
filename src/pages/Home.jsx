@@ -10,7 +10,7 @@ import {
     Row,
     Container
     } from 'react-bootstrap'
-
+import { Link } from 'react-router-dom'
 
 function Home() {
     return (
@@ -31,6 +31,7 @@ function Home() {
                 
         <CardDeck>
             <Card>
+            <Link to="/master">
                 <Card.Img variant="top" src="holder.js/100px160" />
                 <Card.Body>
                 <Card.Title>Dogs</Card.Title>
@@ -42,8 +43,9 @@ function Home() {
                 <Card.Footer>
                 <small className="text-muted">Rescue a Dog</small>
                 </Card.Footer>
+            </Link>
             </Card>
-            
+
             <Card>
                 <Card.Img variant="top" src="holder.js/100px160" />
                 <Card.Body>
@@ -92,16 +94,16 @@ function Home() {
             </hr>
             <Container>
                 <Row>
-                    <Col xs={6}>Image 1</Col>
-                    <Col xs={6}>Story 1</Col>
+                    <Col md={6}>Image 1</Col>
+                    <Col md={6}>Story 1</Col>
                 </Row>
                 <Row>
-                    <Col xs={6}>Story 2</Col>
-                    <Col xs={6}>Image 2</Col>
+                    <Col md={6}>Story 2</Col>
+                    <Col md={6}>Image 2</Col>
                 </Row>
                 <Row>
-                    <Col xs={6}>Image 3</Col>
-                    <Col xs={6}>Story 3</Col>
+                    <Col md={6}>Image 3</Col>
+                    <Col md={6}>Story 3</Col>
                 </Row>
             </Container>
         </div>

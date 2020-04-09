@@ -30,11 +30,11 @@ const NavBar = () => {
                 <Nav.Link href="/details">Pet Details</Nav.Link>
                 <Nav.Link href="/favorites">Schedule Visit</Nav.Link>
                 <NavDropdown title="Resources" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Spay and Neuter</NavDropdown.Item>
+                    <NavDropdown.Item href="/resources">Spay and Neuter</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.2">Care Options</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Playtime</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.4">Success Stories</NavDropdown.Item>
+                    <NavDropdown.Item href="care">Care Options</NavDropdown.Item>
+                    <NavDropdown.Item href="playtime">Playtime</NavDropdown.Item>
+                    <NavDropdown.Item href="/adoption">Success Stories</NavDropdown.Item>
                 </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
