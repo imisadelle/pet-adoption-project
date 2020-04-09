@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Sponsor from '../components/Sponsor'
+import { Button } from 'react-bootstrap'
 import './Details.css'
 import Pug from '../images/pug.jpg'
 import Bone from '../images/bone.png'
@@ -75,18 +76,22 @@ class Details extends Component {
                 </div>
 
                   <div className='button-container'>
-                  <div className='adopt-button-container'>
-                    <button>Adopt Me</button>
+                    <div className='adopt-button-container'>
+                      <Button variant="primary" type="submit" className='detail-btn'>
+                        Adopt Me
+                      </Button>
+                    </div>
+
+                    <div className='visit-button-container'>
+                      <Button variant="primary" type="submit" className='detail-btn'>
+                        Schedule Virtual Visit
+                      </Button>
+                    </div>
                   </div>
 
-                  <div className='visit-button-container'>
-                    <button>Schedule Virtual Visit</button>
+                  <div className='sponsor'>
+                    <Sponsor />
                   </div>
-                </div>
-
-                <div className='sponsor'>
-                  <Sponsor />
-                </div>
               </div>
             </div>
         );
