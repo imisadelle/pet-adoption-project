@@ -5,9 +5,31 @@ import {
     Col,
     Button 
     }from 'react-bootstrap'
-
+import axios from 'axios'
 
 class Visit extends Component {
+    // state = { 
+    //     pet: {} 
+    // }
+    
+    // getPet=() => {
+    //     let petId=this.props.match.params.petId
+    //     axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
+    //     .then(response => this.setState({ pet: response.data }))
+    // }
+    
+    // componentDidMount(){
+    //     if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
+    //         axios.get('https://pt12-final-backend.herokuapp.com/')
+    //           .then(response => {
+    //          window.cache.pet_finder_token(response.data)
+    //          this.getPet()
+    //         })     
+    //       }
+    //       else {this.getPet()}
+
+    // }
+    
     render() {
         return (
             
