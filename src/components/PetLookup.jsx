@@ -10,7 +10,7 @@ export default class PetLookup extends React.Component {
         <div className="row1">
           {
             this.props.pets.map( pet => (
-              <div className="col-md-4">
+              <div key={pet.id} className="col-md-4">
                 <PetListCardUI pet={pet}/>
               </div>
             ))

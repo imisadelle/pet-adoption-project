@@ -44,7 +44,7 @@ class Visit extends Component {
             <br>
             </br>
             <div>
-                <h2>Complete form to schedule a Virtual Visit with this pet</h2>
+                <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
             </div>
             <Form>
             <Form.Row>
