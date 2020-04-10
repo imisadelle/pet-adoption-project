@@ -1,25 +1,23 @@
 .page {
-  background-color: #5B7444;
-  height: 100vh;
-}
-
-.dog {
-  font-size: 90px;
+  background-color:  #f8fbff;
+  height: 100%;
 }
 
 .center-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 3rem;
+    display: grid;
+    grid-template-columns: 8% 70% 5% 10% 8%;
+    grid-template-rows: 0.2fr 1fr 13% 1fr;
+    gap: 1px 1px;
 }
 
 .profile-container {
-  grid-column: 1;
+  grid-area:  2 / 2 / 3 / 3;
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  background-color: #A3C586;
+  background-color: #add6ff;
   padding: 3%;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px 1px; 
 }
 
 .left-container {
@@ -29,16 +27,20 @@
   border-right: 3px solid #47697E;
 }
 
+.profile-pic-container {
+  align-self: center;
+}
+
 .profile-pic {
-  width: 80%;
-  justify-self: end;
+  width: 90%;
+  align-self: center;
   box-shadow: 2px 1px 5px;
   border-radius: 5%;
 }
 
 .bio {
   align-self: center;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 .right-container {
@@ -49,59 +51,81 @@
 
 .dog-facts-container {
   grid-row: 1;
-  align-self: center;
-  justify-self: center;
 }
 
 .dog-facts-title {
   font-size: 25px;
   font-weight: bold;
+  margin-left: 10%;
 }
 
 .dog-facts {
   font-size: 20px;
+  margin-left: 10%;
 }
 
 .breed-facts-container {
   grid-row: 2;
-  align-self: center;
-  justify-self: center;
 }
 
 .breed-facts-title {
   font-size: 25px;
   align-self: center;
   font-weight: bold;
+  margin-left: 10%;
 }
 
 .breed-facts {
   font-size: 20px;
+  margin-left: 10%;
 }
 
 .products-container {
-  grid-column: 2;
-  justify-self: center;
-  background-color: #FCF1D1;
+  /* background-color: #d6eaff; */
+  grid-area: 2 / 4 / 4 / 5;
+  border-radius: 5px;
+  border: 2px solid #47697E;
+  padding: 7%;
 }
 
 .product {
-  width: 30%;
+  width: 60%;
+  margin-left: 2rem;
+  margin-top: 3rem;
 }
 
 .product-title {
   font-size: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.product-toy {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .button-container {
+  grid-area: 3 / 2 / 4 / 3;
   display: flex;
   justify-content: space-evenly;
+  align-self: center;
 }
 
 button {
-  background-color: #FCF1D1;
+  background-color: hsl(210, 66%, 55%);
+  border-color: hsl(217, 66%, 55%);
   cursor: pointer;
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 2px 1px 5px;
   font-size: 20px;
+  color: black;
+  font-weight: 500;
+}
+
+.sponsor {
+  grid-area: 4 / 2 / 5 / 3;
 }
