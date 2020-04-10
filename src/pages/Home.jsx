@@ -1,37 +1,40 @@
-import React, { Component } from 'react';
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React, { Component } from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
-    Jumbotron,
-    Button,
-    Card,
-    CardDeck,
-    Col,
-    Row,
-    Container
-    } from 'react-bootstrap'
+  Jumbotron,
+  Button,
+  Card,
+  CardDeck,
+  Col,
+  Row,
+  Container
+} from "react-bootstrap";
+
+import PetLookup from "../components/AdoptionStories";
 import { Link } from 'react-router-dom'
 
 function Home() {
-    return (
-        <div className="Home">
-
-        <div className="container">
-                
+  return (
+    <div className="Home">
+      <div className="container">
         <Jumbotron>
-
-            <h1>LOVABLE PAWS</h1>
-            <p>
-                Animals have love to give, and pets without homes even moreso.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti porro qui, vel, nobis veritatis quas perferendis in incidunt eveniet possimus adipisci ex odio ab sapiente ducimus eaque? Id, tempora quam.
-            </p>
-            <p>
+          <h1>LOVABLE PAWS</h1>
+          <p>
+            Animals have love to give, and pets without homes even moreso. Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Deleniti porro
+            qui, vel, nobis veritatis quas perferendis in incidunt eveniet
+            possimus adipisci ex odio ab sapiente ducimus eaque? Id, tempora
+            quam.
+          </p>
+          <p>
             <Button variant="primary">Learn more</Button>
-            </p>
+          </p>
         </Jumbotron>
-                
+
         <CardDeck>
             <Card>
-            <Link to="/master">
+              <Link to="/master">
                 <Card.Img variant="top" src="holder.js/100px160" />
                 <Card.Body>
                 <Card.Title>Dogs</Card.Title>
@@ -43,7 +46,7 @@ function Home() {
                 <Card.Footer>
                 <small className="text-muted">Rescue a Dog</small>
                 </Card.Footer>
-            </Link>
+              </Link>
             </Card>
 
             <Card>
@@ -59,7 +62,7 @@ function Home() {
                 <small className="text-muted">Rescue a Cat</small>
                 </Card.Footer>
             </Card>
-            
+
             <Card>
                 <Card.Img variant="top" src="holder.js/100px160" />
                 <Card.Body>
@@ -74,13 +77,13 @@ function Home() {
                 <small className="text-muted">Rescue a bird</small>
                 </Card.Footer>
             </Card>
-            
+
             <Card>
                 <Card.Img variant="top" src="holder.js/100px160" />
                 <Card.Body>
                 <Card.Title>Small and Furry</Card.Title>
                 <Card.Text>
-                    Look no further for a small and furry lovable pet. These animals are waiting for the right person to open their heart and home to the wonders of resucing an itty, bitty, creature of love. 
+                    Look no further for a small and furry lovable pet. These animals are waiting for the right person to open their heart and home to the wonders of resucing an itty, bitty, creature of love.
                 </Card.Text>
                 </Card.Body>
                 <Card.Footer>
@@ -88,7 +91,7 @@ function Home() {
                 </Card.Footer>
             </Card>
         </CardDeck>
-        
+
         <div>
             <hr>
             </hr>
@@ -107,14 +110,33 @@ function Home() {
                 </Row>
             </Container>
         </div>
-        
+
         </div>
-                 
-        </div>   
 
-                );
-      }
+        </div>
 
-     
+        <div>
+          <hr></hr>
+          <Container>
+            <Row>
+              <Col xs={6}>Image 1</Col>
+              <Col xs={6}>Story 1</Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Story 2</Col>
+              <Col xs={6}>Image 2</Col>
+            </Row>
+            <Row>
+              <Col xs={6}>Image 3</Col>
+              <Col xs={6}>Story 3</Col>
+            </Row>
+          </Container>
+
+          <PetLookup />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default Home;
