@@ -24,7 +24,7 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/visit">
+          <Route path="/visit/:petId">
             <Visit />
           </Route>
           <Route path="/resources">
