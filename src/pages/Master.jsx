@@ -10,27 +10,25 @@ class Master extends Component {
   }
 
   getPets = () => {
-    // axios.get(`/pet_finder/pets?token=${window.caches.pet_finder_token}&animal=dog&location=Miami,FL`)
-    //   .then(response => {
-    //     this.setState({pets: response.data})
-    //   })
-
-    this.setState({pets: petList})
-
-  }
-
-  componentDidMount() {
-    if (!window.caches.pet_finder_token) {  //means: if the token does not exist then get it and save
-      axios.get('/pet_finder/auth')
-        .then(response => {
-          window.caches.pet_finder_token = response.data
-          this.getPets()
-        })
+    axios.get(`/pet_finder/pets?token=${window.caches.pet_finder_token}&animal=dog&location=Miami,FL`)
+      .then(response => {
+        this.setState({pets: response.data})
+      })
     }
-    else {
-      this.getPets()
+
+    componentDidMount() {
+      // if (!window.caches.pet_finder_token) {  //means: if the token does not exist then get it and save
+      //   axios.get('/pet_finder/auth')
+      //   .then(response => {
+      //     window.caches.pet_finder_token = response.data
+      //     this.getPets()
+      //   })
+      // }
+      // else {
+      //   this.getPets()
+      // }
+      this.setState({pets: petList})
     }
-  }
 
   render() {
       return (
