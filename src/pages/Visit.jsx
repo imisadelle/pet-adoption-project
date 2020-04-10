@@ -102,7 +102,7 @@ class Visit extends Component {
 
                 <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Control as="select" value="Choose...">
+                <Form.Control as="select">
                     <option>Choose...</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>

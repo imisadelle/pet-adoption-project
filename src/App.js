@@ -12,7 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import "bootstrap/dist/css/bootstrap.min.css"
 export default function App() {
   return (
     <Router>
@@ -46,20 +46,7 @@ export default function App() {
 }
 
 
-// function App() {
-//   return (
-    
-//     <div> 
-//     <Home/>
-//     <About/>
-//     <Master/>
-//     <Details/>
-//     <Visit/>
-//     <Resources/>
 
-//     </div>
-//   );
-// }
 
 
 
