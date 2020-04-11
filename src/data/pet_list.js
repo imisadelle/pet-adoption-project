@@ -34,7 +34,7 @@ const petList = [
      },
      "tags": [],
      "name": "Kehlara",
-     "description": "Are you looking for a quiet, sweet pup? Meet Kehlara! She is a shy, 3 year old who will quietly...",
+     "description": "Are you looking for a quiet, sweet pup? Meet Kehlara! She is a shy, 3 year old who loves naps",
      "photos": [{
          "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47788465/1/?bust=1586524594&width=100",
          "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47788465/1/?bust=1586524594&width=300",
@@ -112,7 +112,7 @@ const petList = [
      },
      "tags": [],
      "name": "Zeus",
-     "description": "Zeus is definitely a favorite here at Animal Services!! When you meet this one of a kind pup, his entire...",
+     "description": "Zeus is definitely a favorite here at Animal Services!! When you meet this one of a kind pup!",
      "photos": [{
          "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47788454/1/?bust=1586520999&width=100",
          "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47788454/1/?bust=1586520999&width=300",
@@ -464,7 +464,7 @@ const petList = [
      },
      "tags": [],
      "name": "Jackie",
-     "description": "Hello. My name is Jackie. I&amp;#39;m looking for my forever home here at the Humane Society of Tampa Bay. When...",
+     "description": "Hello. My name is Jackie. I'm looking for my forever home here at the Humane Society of Tampa Bay.",
      "photos": [{
          "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787435/1/?bust=1586501128&width=100",
          "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787435/1/?bust=1586501128&width=300",
@@ -542,7 +542,7 @@ const petList = [
      },
      "tags": [],
      "name": "Romie",
-     "description": "I&amp;#39;m just a pup in need of lots of love and care. Come and visit me today!",
+     "description": "I'm just a pup in need of lots of love and care. Come and visit me today!",
      "photos": [{
        "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787433/1/?bust=1586501165&width=100",
        "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787433/1/?bust=1586501165&width=300",
@@ -613,7 +613,7 @@ const petList = [
      },
      "tags": [],
      "name": "Roxy",
-     "description": "I&amp;#39;m just a pup in need of lots of love and care. Come and visit me today!",
+     "description": "I'm just a pup in need of lots of love and care. Come and visit me today!",
      "photos": [{
        "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787431/1/?bust=1586501108&width=100",
        "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787431/1/?bust=1586501108&width=300",
@@ -684,7 +684,7 @@ const petList = [
      },
      "tags": [],
      "name": "Drew",
-     "description": "Hi there my name&amp;#39;s Drew! I&amp;#39;m a very sweet boy who loves to go on long walks! I&amp;#39;ve got lots...",
+     "description": "Hi there my name is Drew! I'm a very sweet boy who loves to go on long walks!",
      "photos": [{
          "small": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787442/1/?bust=1586501198&width=100",
          "medium": "https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/47787442/1/?bust=1586501198&width=300",

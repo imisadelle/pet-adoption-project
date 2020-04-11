@@ -31,7 +31,21 @@ const Details = ({ pets }) => {
   //     })
   // }
 
-  
+   function description() {
+      if (pet[0].description) {
+        return pet[0].description
+      } else {
+        return "Is your name Wifi? Cuz I'm feeling a connection"
+      }
+    }
+
+    // function dogPic() {
+    //   if(pet[0].photos[0].medium) {
+    //     return pet[0].photos[0].medium
+    //   } else {
+    //     return Pug
+    //   }
+    // }
         return (
             <div className='page'>
 
@@ -39,19 +53,17 @@ const Details = ({ pets }) => {
                 <div className='profile-container'>
                   <div className='left-container'>
                     <div className='profile-pic-container'>
-                      <img src={Pug} alt='pug pic' className='profile-pic'></img>
+                      <img src={pet[0].photos[0].medium} alt='adoptable pic' className='profile-pic'></img>
                     </div>
 
-                    <div className='bio'>
-                    "Is your name Wifi? Cuz I'm feeling a connection"
-                    </div>
+                    <div className='bio'>{description()}</div>
                   </div>
 
                   <div className='right-container'>
                     <div className='dog-facts-container'>
                       <div className='dog-facts-title'>{pet[0].name}</div>
                       <div className='dog-facts'>Gender: {pet[0].gender}</div>
-                      <div className='dog-facts'>age: {pet[0].age}</div>
+                      <div className='dog-facts'>Age: {pet[0].age}</div>
                       <div className='dog-facts'>Size: {pet[0].size}</div>
                       <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
                     </div>
@@ -99,7 +111,7 @@ const Details = ({ pets }) => {
                   </div>
 
                   <div className='sponsor'>
-                    <Sponsor />
+                    <Sponsor pet={pets}/>
                   </div>
               </div>
             </div>

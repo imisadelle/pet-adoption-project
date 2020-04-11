@@ -1,21 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Form, Button, Col } from 'react-bootstrap'
 import './Sponsor.css'
 
-class Sponsor extends Component {
+const Sponsor= ({ pet }) => {
 
-  handleSubmit(event) {
-    alert('Thank you for your donation!')
-    event.preventDefault()
-    event.target.reset()
-  }
-
-  render() { 
+  // handleSubmit(event) {
+  //   alert('Thank you for your donation!')
+  //   event.preventDefault()
+  //   event.target.reset()
+  // }
     return ( 
       <div className='sponsor-container'>
-        <div className='sponsor-title'>Sponsor DOGNAME</div>
+        <div className='sponsor-title'>Sponsor {pet[0].name}</div>
         
-        <Form onSubmit={this.handleSubmit}>
+        <Form >
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
@@ -71,7 +69,6 @@ class Sponsor extends Component {
         </Form>
       </div>
      );
-  }
 }
  
 export default Sponsor;
