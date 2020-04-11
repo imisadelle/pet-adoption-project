@@ -13,8 +13,7 @@ import {
     Route,
     Switch,
   } from 'react-router-dom';
-
-
+import PetPawLogo from '../images/PetPawLogo.png'
 
 const NavBar = () => {
 
@@ -23,12 +22,12 @@ const NavBar = () => {
             <Navbar.Brand href="#home">
                 <img
                     alt=""
-                    src="./images/PetPawLogo.png"
+                    src={PetPawLogo}
                     width="30"
                     height="30"
                     className="d-inline-block align-top"
-      />{' '}
-                Lovable Paws 🥰 Pet Adoption
+                    />{' '}
+                Lovable Paws
                 </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
