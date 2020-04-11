@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
 import { Button } from 'react-bootstrap'
 import './Details.css'
@@ -8,24 +8,30 @@ import Bone from '../images/bone.png'
 import Ball from '../images/ball.png'
 import Rope from '../images/rope.png'
 
-class Details extends Component {
 
-  state = {
+const Details = ({ pets }) => {
+
+  const [state, setState] = useState({
     name: '',
     bred_for: '',
     temperament: '',
     breed_group: ''
-  }
+  })
 
-  componentDidMount() {
-    axios.get('https://api.thedogapi.com/v1/breeds')
-      .then( response => {
-          let data = response.data[0]
-          this.setState( data )
-      })
-  }
+  let {id} = useParams()
 
-    render() {
+  const pet = pets.filter(pet => id == pet.id)
+
+
+  // componentDidMount() {
+  //   axios.get('https://api.thedogapi.com/v1/breeds')
+  //     .then( response => {
+  //         let data = response.data[0]
+  //         this.setState( data )
+  //     })
+  // }
+
+  
         return (
             <div className='page'>
 
@@ -43,15 +49,18 @@ class Details extends Component {
 
                   <div className='right-container'>
                     <div className='dog-facts-container'>
-                      <div className='dog-facts-title'>DOGNAME is:</div>
-                      <div className='dog-facts'>Fun, Loving, Good with Cats, and Playful</div>
+                      <div className='dog-facts-title'>{pet[0].name}</div>
+                      <div className='dog-facts'>Gender: {pet[0].gender}</div>
+                      <div className='dog-facts'>age: {pet[0].age}</div>
+                      <div className='dog-facts'>Size: {pet[0].size}</div>
+                      <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
                     </div>
 
                     <div className='breed-facts-container'>
-                      <div className='breed-facts-title'>{this.state.name}s are:</div>
-                      <div className='breed-facts'>Bred for: {this.state.bred_for}</div>
-                      <div className='breed-facts'>Temperament: {this.state.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {this.state.breed_group}</div>
+                      <div className='breed-facts-title'>{state.name}s are:</div>
+                      <div className='breed-facts'>Bred for: {state.bred_for}</div>
+                      <div className='breed-facts'>Temperament: {state.temperament}</div>
+                      <div className='breed-facts'>Breed Group: {state.breed_group}</div>
                     </div>
                   </div>
                 </div>
@@ -95,7 +104,6 @@ class Details extends Component {
               </div>
             </div>
         );
-    }
 }
 
 export default Details;
