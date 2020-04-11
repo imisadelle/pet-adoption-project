@@ -19,7 +19,7 @@ class Footer extends Component {
                 <Nav.Link href="/master">Pet Lookup</Nav.Link>
                 <Nav.Link href="/details">Pet Details</Nav.Link>
                 <Nav.Link href="/visit">Schedule Visit</Nav.Link>
-                <NavDropdown title="Resources" id="basic-nav-dropdown"></NavDropdown>  
+                <Nav.Link href="/resources">Resources</Nav.Link>
                 </Nav>
                 <div class="push"></div>
             </div>
