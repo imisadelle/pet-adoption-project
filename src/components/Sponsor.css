@@ -12,3 +12,8 @@
   margin-bottom: 3%;
 }
 
+.btn {
+  background-color: hsl(217, 66%, 55%);
+  color: black;
+}
+

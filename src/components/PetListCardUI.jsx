@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const PetListCardUI = ({pet}) => {
   return (
@@ -11,9 +12,9 @@ const PetListCardUI = ({pet}) => {
         <p className="card-text text-secondary">
           {pet.description}
         </p>
-        <a href="#" className="btn btn-outline-success">
+        <Link to={`/details/${pet.id}`} className="btn btn-outline-success">
           Go Anywhere
-        </a>
+        </Link>
       </div>
     </div>
   );

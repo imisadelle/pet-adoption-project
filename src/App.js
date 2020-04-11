@@ -6,6 +6,7 @@ import Details from './pages/Details'
 import Visit from './pages/Visit'
 import NavBar from './components/NavBar'
 import Resources from './pages/Resources'
+import { petList } from './data/pet_list'
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,8 +33,8 @@ export default function App() {
           <Route path="/resources">
             <Resources />
           </Route>
-          <Route path="/details">
-            <Details />
+          <Route path="/details/:id">
+            <Details pets={petList}/>
           </Route>
           <Route path="/master">
             <Master />
