@@ -19,16 +19,16 @@ import {
 const NavBar = () => {
 
     return(
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" fixed="top">
             <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About Us</Nav.Link>
-                <Nav.Link href="/random">Pet Lookup</Nav.Link>
+                <Nav.Link href="/master">Pet Lookup</Nav.Link>
                 <Nav.Link href="/details">Pet Details</Nav.Link>
-                <Nav.Link href="/favorites">Schedule Visit</Nav.Link>
+                <Nav.Link href="/visit">Schedule Visit</Nav.Link>
                 <NavDropdown title="Resources" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/resources">Spay and Neuter</NavDropdown.Item>
                     <NavDropdown.Divider />

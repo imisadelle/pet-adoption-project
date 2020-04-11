@@ -12,6 +12,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -24,7 +26,7 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/visit">
+          <Route path="/visit/:petId">
             <Visit />
           </Route>
           <Route path="/resources">
@@ -40,26 +42,14 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
 }
 
 
-// function App() {
-//   return (
-    
-//     <div> 
-//     <Home/>
-//     <About/>
-//     <Master/>
-//     <Details/>
-//     <Visit/>
-//     <Resources/>
 
-//     </div>
-//   );
-// }
 
 
 

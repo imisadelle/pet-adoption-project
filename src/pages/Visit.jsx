@@ -6,31 +6,32 @@ import {
     Button
     }from 'react-bootstrap'
 import axios from 'axios'
-import {petList} from '../data/pet_list.js'
-
+import { petList } from "../data/pet_list"
 class Visit extends Component {
-    state = {
-        pet: {}
+    state = { 
+        pet: {} 
     }
-
+    
     getPet=() => {
-        let petId=this.props.match.params.petId
-        axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
-        .then(response => this.setState({ pet: response.data }))
+    //     let petId=this.props.match.params.petId
+    //     axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
+    //     .then(response => this.setState({ pet: response.data }))
     }
-
+    
     componentDidMount(){
-        // if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
-        //     axios.get('https://pt12-final-backend.herokuapp.com/')
-        //       .then(response => {
-        //      window.cache.pet_finder_token(response.data)
-        //      this.getPet()
-        //     })
-        //   }
-        //   else {this.getPet()}
-      this.setState({ pet: petList[0]})
+    //     if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
+    //         axios.get('https://pt12-final-backend.herokuapp.com/')
+    //           .then(response => {
+    //          window.cache.pet_finder_token(response.data)
+    //          this.getPet()
+    //         })     
+    //       }
+    //       else {this.getPet()}
+        this.setState({
+            pet: petList[0]
+        })
     }
-
+    
     render() {
         return (
 
@@ -103,7 +104,7 @@ class Visit extends Component {
 
                 <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Control as="select" value="Choose...">
+                <Form.Control as="select">
                     <option>Choose...</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
