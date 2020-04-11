@@ -13,6 +13,8 @@ import {
   Link
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
+import Footer from './components/Footer'
+
 export default function App() {
   return (
     <Router>
@@ -40,6 +42,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
