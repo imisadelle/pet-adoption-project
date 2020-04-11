@@ -3,36 +3,37 @@ import {
     Container,
     Form,
     Col,
-    Button 
+    Button
     }from 'react-bootstrap'
 import axios from 'axios'
+import {petList} from '../data/pet_list.js'
 
 class Visit extends Component {
-    // state = { 
-    //     pet: {} 
-    // }
-    
-    // getPet=() => {
-    //     let petId=this.props.match.params.petId
-    //     axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
-    //     .then(response => this.setState({ pet: response.data }))
-    // }
-    
-    // componentDidMount(){
-    //     if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
-    //         axios.get('https://pt12-final-backend.herokuapp.com/')
-    //           .then(response => {
-    //          window.cache.pet_finder_token(response.data)
-    //          this.getPet()
-    //         })     
-    //       }
-    //       else {this.getPet()}
+    state = {
+        pet: {}
+    }
 
-    // }
-    
+    getPet=() => {
+        let petId=this.props.match.params.petId
+        axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
+        .then(response => this.setState({ pet: response.data }))
+    }
+
+    componentDidMount(){
+        // if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
+        //     axios.get('https://pt12-final-backend.herokuapp.com/')
+        //       .then(response => {
+        //      window.cache.pet_finder_token(response.data)
+        //      this.getPet()
+        //     })
+        //   }
+        //   else {this.getPet()}
+      this.setState({ pet: petList[0]})
+    }
+
     render() {
         return (
-            
+
             // <div>
             //     <h1>Insert Image of Selected Pet</h1>
             //     <h2>Insert Name of selected Pet</h2>
@@ -44,7 +45,7 @@ class Visit extends Component {
             <br>
             </br>
             <div>
-                <h2>Complete form to schedule a Virtual Visit with this pet</h2>
+              <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
             </div>
             <Form>
             <Form.Row>
@@ -160,7 +161,7 @@ class Visit extends Component {
             let e = document.getElementById("formGridState");
             let value = e.options[e.selectedIndex].value;
             let text = e.options[e.selectedIndex].text; */}
-                
+
                 </Form.Control>
                 </Form.Group>
 
@@ -169,7 +170,7 @@ class Visit extends Component {
                 <Form.Control />
                 </Form.Group>
             </Form.Row>
-            
+
             <Form.Row>
                 <Form.Group as={Col} controlId="formGridCalendar">
                 <Form.Label>Insert Calendar Picker</Form.Label>
