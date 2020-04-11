@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
-import { Form, Button, Col, Modal } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 import './Sponsor.css'
 
 class Sponsor extends Component {
 
-  state = {
-    show: false
-  }
-
-  handleClose = () => {
-    this.setState({ show: false })
-  }
-
-  handleShow = () => { 
-    this.setState({ show: true })
+  handleSubmit(event) {
+    alert('Thank you for your donation!')
+    event.preventDefault()
+    event.target.reset()
   }
 
   render() { 
@@ -21,7 +15,7 @@ class Sponsor extends Component {
       <div className='sponsor-container'>
         <div className='sponsor-title'>Sponsor DOGNAME</div>
         
-        <Form>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
@@ -71,24 +65,10 @@ class Sponsor extends Component {
             <Form.Check type="checkbox" label="Monthly Donation" />
           </Form.Group>
 
-        
-        </Form>
-
-        <Button variant="primary" type="submit" onClick={this.handleShow}>
+          <Button variant="primary" type="submit" >
             Submit
           </Button>
-
-          <Modal show={this.state.show} onHide={this.handleClose}>
-            <Modal.Body>Thank you for your donation!</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={this.handleClose}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
-     
-
-        
+        </Form>
       </div>
      );
   }
