@@ -25,19 +25,19 @@ class Sponsor extends Component {
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
+              <Form.Control type="email" placeholder="Email" required='true'/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPassword">
               <Form.Label>Name</Form.Label>
-              <Form.Control type="name" placeholder="Name" />
+              <Form.Control type="name" placeholder="Name" required='true' />
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>Address</Form.Label>
-              <Form.Control type="address" placeholder="Address"/>
+              <Form.Control type="address" placeholder="Address" required='true'/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridState">
@@ -50,19 +50,19 @@ class Sponsor extends Component {
 
             <Form.Group as={Col} controlId="formGridZip">
               <Form.Label>ZipCode</Form.Label>
-              <Form.Control placeholder='ZipCode'/>
+              <Form.Control placeholder='ZipCode' required='true'/>
             </Form.Group>
           </Form.Row>
 
           <Form.Row>
             <Form.Group as={Col} controlId="formGridCity">
               <Form.Label>Donation Amount</Form.Label>
-              <Form.Control type="address" placeholder="Amount"/>
+              <Form.Control type="address" placeholder="Amount" required='true'/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridState">
               <Form.Label>Credit Card</Form.Label>
-              <Form.Control type='password' placeholder='Credit Card'/>
+              <Form.Control type='password' placeholder='Credit Card' required='true'/>
             </Form.Group>
           </Form.Row>
 
@@ -71,6 +71,7 @@ class Sponsor extends Component {
             <Form.Check type="checkbox" label="Monthly Donation" />
           </Form.Group>
 
+        
         </Form>
 
         <Button variant="primary" type="submit" onClick={this.handleShow}>
@@ -85,6 +86,9 @@ class Sponsor extends Component {
               </Button>
             </Modal.Footer>
           </Modal>
+     
+
+        
       </div>
      );
   }

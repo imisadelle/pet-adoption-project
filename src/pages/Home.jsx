@@ -110,30 +110,6 @@ function Home() {
                 </Row>
             </Container>
         </div>
-
-        </div>
-
-        </div>
-
-        <div>
-          <hr></hr>
-          <Container>
-            <Row>
-              <Col xs={6}>Image 1</Col>
-              <Col xs={6}>Story 1</Col>
-            </Row>
-            <Row>
-              <Col xs={6}>Story 2</Col>
-              <Col xs={6}>Image 2</Col>
-            </Row>
-            <Row>
-              <Col xs={6}>Image 3</Col>
-              <Col xs={6}>Story 3</Col>
-            </Row>
-          </Container>
-
-          <PetLookup />
-        </div>
       </div>
     </div>
   );
