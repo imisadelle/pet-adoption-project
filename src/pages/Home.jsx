@@ -13,82 +13,109 @@ import {
 
 import PetLookup from "../components/AdoptionStories";
 import { Link } from 'react-router-dom'
+import Benny from '../images/Benny.jpg'
+import Lobs from '../images/Lobs1.jpg'
+import Lemon from '../images/Lemon.jpg'
+import Ferret from '../images/Ferret.jpg'
+
 
 function Home() {
+  const quote = "Unconditional ❤️ love is just a click away"
+
   return (
     <div className="Home">
       <div className="container">
         <Jumbotron>
           <h1>LOVABLE PAWS</h1>
+          <h2>
+            Animals have love to give.  
+          </h2>
+          <h2>Pets without homes even moreso.</h2>
+          <h3>Unconditional ❤️ love is just a click away</h3>
           <p>
-            Animals have love to give, and pets without homes even moreso. Lorem
-            ipsum dolor sit amet, consectetur adipisicing elit. Deleniti porro
-            qui, vel, nobis veritatis quas perferendis in incidunt eveniet
-            possimus adipisci ex odio ab sapiente ducimus eaque? Id, tempora
-            quam.
-          </p>
-          <p>
-            <Button variant="primary">Learn more</Button>
+            <Link to='/about'>
+            <Button variant="success">Learn more</Button>{' '}
+            </Link>
           </p>
         </Jumbotron>
 
         <CardDeck>
             <Card>
-              <Link to="/master">
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={ Benny } />
                 <Card.Body>
-                <Card.Title>Dogs</Card.Title>
+                <Card.Title className="text-center">
+                  Dogs
+                  </Card.Title>
                 <Card.Text>
-                    Woof! Adopt DOGS because, This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
+                    Adopt DOGS because, they're loyal, playful, affectionate, social, great for all ages and make life better.  
                 </Card.Text>
                 </Card.Body>
+              <Link to="/master">
                 <Card.Footer>
-                <small className="text-muted">Rescue a Dog</small>
+                <large className="text-bold">Woof! Rescue a Dog</large>
+                <p></p> 
+                <Link to='/master'>
+            <Button className="text-center" variant="success">Search</Button>{' '}
+            </Link>
                 </Card.Footer>
               </Link>
             </Card>
 
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={ Lobs } />
                 <Card.Body>
-                <Card.Title>Cats</Card.Title>
+                <Card.Title className="text-center">Cats</Card.Title>
                 <Card.Text>
-                    Meow! Adopt CATS because, This card has supporting text below as a natural lead-in to additional
-                    content.{' '}
+                    Adopt CATS because they're clever, curious, clean, have the best purrs, are independent and make life better.{' '}
                 </Card.Text>
                 </Card.Body>
+                <Link to="/master">
                 <Card.Footer>
-                <small className="text-muted">Rescue a Cat</small>
+                <large className="text-bold">Meow! Rescue a Cat</large>
+                <p></p> 
+                <Link to='/about'>
+            <Button className="text-center" variant="success">Search</Button>{' '}
+            </Link>
                 </Card.Footer>
+                </Link>
             </Card>
 
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={ Lemon } />
                 <Card.Body>
-                <Card.Title>Birds</Card.Title>
+                <Card.Title className="text-center">Birds</Card.Title>
                 <Card.Text>
-                    Tweet, Tweet! Adopt a BIRD because, This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This card has even longer content than the first to
-                    show that equal height action.
+                     Adopt a BIRD because they're intelligent, great conversationalists, low-maintenance, love company and make life better. 
                 </Card.Text>
                 </Card.Body>
+                <Link to="/master">
                 <Card.Footer>
-                <small className="text-muted">Rescue a bird</small>
+                <large className="text-bold">Tweet! Rescue a Bird</large>
+                <p></p> 
+                <Link to='/master'>
+            <Button className="text-center" variant="success">Search</Button>{' '}
+            </Link>
                 </Card.Footer>
+                </Link>
             </Card>
 
             <Card>
-                <Card.Img variant="top" src="holder.js/100px160" />
+                <Card.Img variant="top" src={ Ferret } />
                 <Card.Body>
-                <Card.Title>Small and Furry</Card.Title>
+                <Card.Title className="text-center">Small and Furry</Card.Title>
                 <Card.Text>
-                    Look no further for a small and furry lovable pet. These animals are waiting for the right person to open their heart and home to the wonders of resucing an itty, bitty, creature of love.
+                    Adopt a Small Furry pet because they're cute, entertaining to watch and play with, loving don't eat too much and make life better. 
                 </Card.Text>
                 </Card.Body>
+                <Link to="/master">
                 <Card.Footer>
-                <small className="text-muted">Rescue a small and furry critter</small>
+                  <large className="text-bold">Squeak! Rescue small</large>
+                  <p></p>
+                  <Link to='/master'>
+                    <Button className="text-center" variant="success">Search</Button>{' '}
+                  </Link>
                 </Card.Footer>
+                </Link>
             </Card>
         </CardDeck>
 

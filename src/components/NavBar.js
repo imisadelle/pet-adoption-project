@@ -18,7 +18,12 @@ import PetPawLogo from '../images/PetPawLogo.png'
 const NavBar = () => {
 
     return(
-        <Navbar bg="light" expand="lg" fixed="top">
+        <Navbar 
+        className="color-nav" 
+        variant="light"
+        // bg="light" 
+        expand="lg" 
+        fixed="top">
             <Navbar.Brand href="#home">
                 <img
                     alt=""
