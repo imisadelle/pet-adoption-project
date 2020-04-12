@@ -2,27 +2,33 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
 import { Button } from 'react-bootstrap'
+import axios from 'axios'
 import './Details.css'
 import Pug from '../images/pug.jpg'
 import Bone from '../images/bone.png'
 import Ball from '../images/ball.png'
 import Rope from '../images/rope.png'
+import { useEffect } from 'react'
 
 
 const Details = ({ pets }) => {
 
-  const [state, setState] = useState({
-    name: '',
-    bred_for: '',
-    temperament: '',
-    breed_group: ''
-  })
+  const [dog, setDog] = useState({ dogs: [] })
 
   let {id} = useParams()
-
   const pet = pets.filter(pet => id == pet.id)
 
+  const dogApi = async() => {
+    const { data } =  await axios(
+      `https://api.thedogapi.com/v1/breeds`
+    )
+      console.log({data}) 
+  }
 
+  useEffect(() => {
+    dogApi()
+  }, [])
+ 
   // componentDidMount() {
   //   axios.get('https://api.thedogapi.com/v1/breeds')
   //     .then( response => {
@@ -68,12 +74,12 @@ const Details = ({ pets }) => {
                       <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
                     </div>
 
-                    <div className='breed-facts-container'>
+                    {/* <div className='breed-facts-container'>
                       <div className='breed-facts-title'>{state.name}s are:</div>
                       <div className='breed-facts'>Bred for: {state.bred_for}</div>
                       <div className='breed-facts'>Temperament: {state.temperament}</div>
                       <div className='breed-facts'>Breed Group: {state.breed_group}</div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 

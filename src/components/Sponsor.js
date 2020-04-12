@@ -1,4 +1,5 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 import { Form, Button, Col } from 'react-bootstrap'
 import './Sponsor.css'
 
@@ -9,9 +10,13 @@ const Sponsor= ({ pet }) => {
   //   event.preventDefault()
   //   event.target.reset()
   // }
+  let {id} = useParams()
+
+  const pets = pet.filter(pet => id == pet.id)
+  
     return ( 
       <div className='sponsor-container'>
-        <div className='sponsor-title'>Sponsor {pet[0].name}</div>
+        <div className='sponsor-title'>Sponsor {pets[0].name}</div>
         
         <Form >
           <Form.Row>
