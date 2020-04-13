@@ -1,19 +1,23 @@
-import React from 'react'
-import { Form, Button, Col } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Form, Button, Col, Modal } from 'react-bootstrap'
 import './Sponsor.css'
 
 const Sponsor= ({ pet }) => {
 
-  // handleSubmit(event) {
-  //   alert('Thank you for your donation!')
-  //   event.preventDefault()
-  //   event.target.reset()
-  // }
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  let {id} = useParams()
+  const pets = pet.filter(pet => id == pet.id)
+
     return ( 
       <div className='sponsor-container'>
-        <div className='sponsor-title'>Sponsor {pet[0].name}</div>
+        <div className='sponsor-title'>Sponsor {pets[0].name}</div>
         
-        <Form >
+        <Form onSubmit={handleShow}>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
@@ -63,10 +67,19 @@ const Sponsor= ({ pet }) => {
             <Form.Check type="checkbox" label="Monthly Donation" />
           </Form.Group>
 
-          <Button variant="primary" type="submit" >
+          <Button variant="primary" type="submit" onClick={handleShow}>
             Submit
           </Button>
         </Form>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Body>Thank you for your donation!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
      );
 }
