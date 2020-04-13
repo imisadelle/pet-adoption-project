@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { useParams } from 'react-router-dom'
 import {
     Container,
     Form,
     Col,
     Button
-    }from 'react-bootstrap'
+    } from 'react-bootstrap'
 import axios from 'axios'
 import { petList } from "../data/pet_list"
+// import DatePicker from 'react-datepicker'
+
+
 class Visit extends Component {
     state = { 
         pet: {} 
@@ -32,16 +36,10 @@ class Visit extends Component {
         })
     }
     
+    
     render() {
-        return (
+            return (
 
-            // <div>
-            //     <h1>Insert Image of Selected Pet</h1>
-            //     <h2>Insert Name of selected Pet</h2>
-            //     <br>
-            //     </br>
-            //     <h1>Schedule a Virtual Pet Visit</h1>
-            // </div>
             <Container>
             <br>
             </br>
@@ -49,7 +47,7 @@ class Visit extends Component {
               <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
             </div>
             <Form>
-            <Form.Row>
+            <Form.Row className='form'>
                 <Form.Group as={Col} controlId="tempfield">
                 <Form.Label>Pet Image Display</Form.Label>
                 <Form.Control type="fname" placeholder="Add Image Event Listener Here" />
@@ -176,6 +174,7 @@ class Visit extends Component {
                 <Form.Group as={Col} controlId="formGridCalendar">
                 <Form.Label>Insert Calendar Picker</Form.Label>
                 <Form.Control />
+                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
                 </Form.Group>
             </Form.Row>
 
