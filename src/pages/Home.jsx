@@ -17,6 +17,9 @@ import Benny from '../images/Benny.jpg'
 import Lobs from '../images/Lobs1.jpg'
 import Lemon from '../images/Lemon.jpg'
 import Ferret from '../images/Ferret.jpg'
+import Story1Pet from '../images/Story1Pet.jpg'
+import Story2Pet from '../images/Story2Pet.jpg'
+import Story3Pic from '../images/Story3Pic.jpg'
 
 
 function Home() {
@@ -123,18 +126,67 @@ function Home() {
             <hr>
             </hr>
             <Container>
+              <h2>Happy News</h2>
+                <h3>Adoption Success Stories</h3>
                 <Row>
-                    <Col md={6}>Image 1</Col>
-                    <Col md={6}>Story 1</Col>
+                    <Col md={6}>
+                    <img
+                  alt=""
+                  src={ Story1Pet }
+                  width="100%"
+                  height="100%"
+                  // className="d-inline-block align-top"
+                  />{' '}
+                    </Col>
+                    <Col md={6}>Thanks to Sheltering in Place, Animal Shelters Are Empty.A recent pet-adoption boom is the feel-good pandemic story you need right now.THE RIVERSIDE COUNTY Animal Shelter has a beautiful problem: It's all out of adoptable animals. “As you can see, we have a completely empty adoption center,” animal services director Julie Bank says in a video posted Wednesday on the California shelter’s Instagram account. She and her coworkers, all wearing masks, throw their arms up and cheer, showing off empty pen after empty pen. A few days earlier, on Sunday, Chicago Animal Care and Control’s Adoptable Pets program had similar news. “CACC has no dogs currently available for adoption,” the shelter told its Facebook followers. “We’ve never typed those words before.” The last adoptable dogs—a “short, squat beefcake” named Penn and a “boisterous babe” named Alley—had found loving homes that day.
+                    </Col>
+                    <Card.Footer>
+                  <Link to="https://www.wired.com/story/coronavirus-pet-adoption-boom/">
+                  <large className="text-bold">Click to read full article...
+                  </large>
+                  </Link>
+                </Card.Footer>
                 </Row>
+                <br/>
                 <Row>
-                    <Col md={6}>Story 2</Col>
-                    <Col md={6}>Image 2</Col>
+                    <Col md={6}>NOTES FROM THE VOLUNTEER: Both know some basic commands and seem eager to learn more! Junior and Cascade do get along with other dogs, but may do best not sharing their home with others.
+                    MORE INFORMATION: You can find Cascade and Junior and other wonderful dogs and cats at the Huntington Cabell Wayne Animal Shelter, located at 1901 James River Road. Currently the shelter is closed to the public due to the COVID-19. If interested in adopting a dog or cat, call the shelter for an appointment. The phone number is 304-696-5551.
+                    </Col>
+                    <Col md={6}>
+                    <img
+                  alt=""
+                  src={ Story2Pet }
+                  width="100%"
+                  height="100%"
+                  />{' '}
+                    </Col>
+                    <Card.Footer style={{textAlign: "right"}}>
+                  <Link to="https://www.herald-dispatch.com/features_entertainment/adopt-a-pet/article_8e1718ba-6982-5eb5-92f7-4be8f991e914.html">
+                  <large>Click to read full article...
+                  </large>
+                  </Link>
+                </Card.Footer>
                 </Row>
+                <br/>
                 <Row>
-                    <Col md={6}>Image 3</Col>
-                    <Col md={6}>Story 3</Col>
+                    <Col md={6}>
+                    <img
+                  alt=""
+                  src={ Story3Pic }
+                  width="100%"
+                  height="100%"
+                  />{' '}
+                    </Col>
+                    <Col md={6}>Every Single Animal Was Adopted From Chicago Animal Control This Week For The First Time Ever! People stuck at home are rushing to adopt or foster dogs and cats from the city's shelters, but you're not out of luck if you want to help. Thousands of people have applied to foster and adopt dogs and cats at Chicago’s shelters since the stay at home order went into effect March 21. There’s been so much interest in fostering, in particular, that some shelters haven’t had enough cats and dogs and now have a waiting list of people willing to care for an animal in need.
+                    </Col>
+                    <Card.Footer>
+                  <Link to="https://blockclubchicago.org/2020/04/08/every-single-animal-was-adopted-from-chicago-animal-control-this-week-for-the-first-time-ever/">
+                  <large className="text-bold">Click to read full article...
+                  </large>
+                  </Link>
+                </Card.Footer>
                 </Row>
+                <br/>
             </Container>
         </div>
       </div>
