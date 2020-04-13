@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useFetch } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
 import { Button } from 'react-bootstrap'
