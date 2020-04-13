@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useFetch } from 'react'
 import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
 import { Button } from 'react-bootstrap'
@@ -16,18 +16,38 @@ const Details = ({ pets }) => {
   let {id} = useParams()
   const pet = pets.filter(pet => id == pet.id)
 
-  const dogApi = async () => {
-    const { data } =  await axios(
-      `https://api.thedogapi.com/v1/breeds`
-    )
-      setDog({ dogs: data[0] })
+  async function fetchData() {
+    const res = await fetch("https://api.thedogapi.com/v1/breeds");
+    res
+      .json()
+      .then(res => setDog(res))
   }
 
   useEffect(() => {
-    dogApi()
-  }, [])
+    fetchData();
+  }, []);
 
-  console.log(dog.dogs.name)
+  console.log(dog.name)
+
+
+  // const dogApi = async () => {
+  //   const { data } =  await axios(
+  //     `https://api.thedogapi.com/v1/breeds`
+  //   )
+  //     setDog({ dogs: data })
+  // }
+
+  // useEffect(() => {
+  //   dogApi()
+  // }, [])
+
+  // const breed = pets.map( pup => {
+  //   let petFinder = pup.breeds.primary
+
+  //   let petApi = dog.dogs
+  //   return petApi
+  
+  // })
 
    function description() {
       if (pet[0].description) {
@@ -37,13 +57,8 @@ const Details = ({ pets }) => {
       }
     }
 
-    // function dogPic() {
-    //   if(pet[0].photos[0].medium) {
-    //     return pet[0].photos[0].medium
-    //   } else {
-    //     return Pug
-    //   }
-    // }
+    const dogPic = pet[0].photos[0] ?  pet[0].photos[0].medium : 'https://cdn4.vectorstock.com/i/1000x1000/29/73/dog-silhouette-vector-22362973.jpg'
+
         return (
             <div className='page'>
 
@@ -51,7 +66,7 @@ const Details = ({ pets }) => {
                 <div className='profile-container'>
                   <div className='left-container'>
                     <div className='profile-pic-container'>
-                      <img src={pet[0].photos[0].medium} alt='adoptable pic' className='profile-pic'></img>
+                      <img src={dogPic} alt='adoptable pic' className='profile-pic'></img>
                     </div>
 
                     <div className='bio'>{description()}</div>
@@ -64,13 +79,14 @@ const Details = ({ pets }) => {
                       <div className='dog-facts'>Age: {pet[0].age}</div>
                       <div className='dog-facts'>Size: {pet[0].size}</div>
                       <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
+                      <div className='dog-facts'>Location: {pet[0].contact.address.city}, {pet[0].contact.address.state}</div>
                     </div>
 
                     <div className='breed-facts-container'>
-                      <div className='breed-facts-title'>{dog.dogs.name}s are:</div>
+                      {/* <div className='breed-facts-title'>{dog.dogs.name}s are:</div>
                       <div className='breed-facts'>Bred for: {dog.dogs.bred_for}</div>
                       <div className='breed-facts'>Temperament: {dog.dogs.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {dog.dogs.breed_group}</div>
+                      <div className='breed-facts'>Breed Group: {dog.dogs.breed_group}</div> */}
                     </div>
                   </div>
                 </div>
@@ -110,6 +126,11 @@ const Details = ({ pets }) => {
 
                   <div className='sponsor'>
                     <Sponsor pet={pets}/>
+                  </div>
+
+                  <div className='why-sponsor-container'>
+                    <div className='why-sponsor'>Why Sponsor?</div>
+                    <div className='why-desciption'>Sponsoring a pet will help with supplemental care. Your contribution will go towards additional medical care the pet requires. It also upgrades their current bed, bowls, food, and toys.</div>
                   </div>
               </div>
             </div>
