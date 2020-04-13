@@ -13,14 +13,27 @@ import {
     Route,
     Switch,
   } from 'react-router-dom';
-//   import { LinkContainer } from "react-router-bootstrap"; 
-
+import PetPawLogo from '../images/PetPawLogo.png'
 
 const NavBar = () => {
 
     return(
-        <Navbar bg="light" expand="lg" fixed="top">
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar 
+        className="color-nav" 
+        variant="light"
+        // bg="light" 
+        expand="lg" 
+        fixed="top">
+            <Navbar.Brand href="#home">
+                <img
+                    alt=""
+                    src={PetPawLogo}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top"
+                    />{' '}
+                Lovable Paws
+                </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
