@@ -22,8 +22,8 @@ const NavBar = () => {
         className="color-nav" 
         variant="light"
         // bg="light" 
-        expand="lg" 
-        fixed="top">
+        expand="lg"> 
+        {/* fixed="top"> */}
             <Navbar.Brand href="#home">
                 <img
                     alt=""

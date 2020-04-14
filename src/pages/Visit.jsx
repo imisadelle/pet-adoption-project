@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { useParams } from 'react-router-dom'
 import {
     Container,
     Form,
     Col,
+    Row,
     Button
-    }from 'react-bootstrap'
+    } from 'react-bootstrap'
 import axios from 'axios'
 import { petList } from "../data/pet_list"
+// import DatePicker from 'react-datepicker'
+
+
 class Visit extends Component {
     state = {
         pet: {}
     }
+    // fetch('/visit/1') 
+    // .then(res => res.json())
+    // .then(res => console.log(res))
 
     getPet=() => {
       let petId = this.props.match.params.petId
@@ -35,22 +43,16 @@ class Visit extends Component {
     render() {
       let img = this.state.pet.photos && this.state.pet.photos[0].medium
       let alt = this.state.pet.breeds && `A ${this.state.pet.breeds.primary} dog`
-        return (
-
-            // <div>
-            //     <h1>Insert Image of Selected Pet</h1>
-            //     <h2>Insert Name of selected Pet</h2>
-            //     <br>
-            //     </br>
-            //     <h1>Schedule a Virtual Pet Visit</h1>
-            // </div>
-            <Container>
+            return (
+            <Row>
+            <Col xs={12} md={8}>
+            <Container className='Form'>
             <br>
             </br>
             <div>
               <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
             </div>
-            <Form>
+            <Form >
             <Form.Row>
               <Form.Group as={Col} controlId="tempfield">
                 <Form.Label>Pet Image Display</Form.Label>
@@ -178,6 +180,7 @@ class Visit extends Component {
                 <Form.Group as={Col} controlId="formGridCalendar">
                 <Form.Label>Insert Calendar Picker</Form.Label>
                 <Form.Control />
+                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
                 </Form.Group>
             </Form.Row>
 
@@ -190,6 +193,13 @@ class Visit extends Component {
             </Button>
             </Form>
             </Container>
+            </Col>
+            <Col xs={6} md={4}>
+                <Row> Row 1</Row>
+                <Row> Row 2</Row>
+                <Row> Row 3</Row>
+            </Col>
+            </Row>
         );
     }
 }
