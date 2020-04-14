@@ -9,14 +9,15 @@ const Sponsor= ({ pet }) => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  // const toggleView = () => setShow(!show)
 
   let {id} = useParams()
-  const pets = pet.filter(pet => id == pet.id)
-
-    return ( 
+  // const pets = pet.filter(pet => id == pet.id)
+  let pets = [{}]
+    return (
       <div className='sponsor-container'>
         <div className='sponsor-title'>Sponsor {pets[0].name}</div>
-        
+
         <Form onSubmit={handleShow}>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
@@ -62,7 +63,7 @@ const Sponsor= ({ pet }) => {
             </Form.Group>
           </Form.Row>
 
-      
+
           <Form.Group controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Monthly Donation" />
           </Form.Group>
@@ -83,5 +84,5 @@ const Sponsor= ({ pet }) => {
       </div>
      );
 }
- 
+
 export default Sponsor;
