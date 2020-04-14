@@ -23,19 +23,16 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
        <NavBar />
+       <div style={{marginTop: '56px'}}>
         <Switch>
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/visit/:petId">
-            <Visit />
-          </Route>
+          <Route path="/visit/:petId" component={Visit} />
           <Route path="/resources">
             <Resources />
           </Route>
-          <Route path="/details/:id">
-            <Details pets={petList}/>
-          </Route>
+          <Route path="/details/:id" render={props => <Details {...props} pets={petList}/>}/>
           <Route path="/master">
             <Master />
           </Route>
@@ -43,6 +40,7 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+       </div>
         <Footer/>
       </div>
     </Router>

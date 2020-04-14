@@ -9,7 +9,7 @@ import Bone from '../images/bone.png'
 import Ball from '../images/ball.png'
 import Rope from '../images/rope.png'
 
-const Details = ({ pets }) => {
+const Details = ({ pets, history, match }) => {
 
   const [dog, setDog] = useState({ dogs: [] })
 
@@ -46,7 +46,7 @@ const Details = ({ pets }) => {
 
   //   let petApi = dog.dogs
   //   return petApi
-  
+
   // })
 
    function description() {
@@ -118,7 +118,12 @@ const Details = ({ pets }) => {
                     </div>
 
                     <div className='visit-button-container'>
-                      <Button variant="primary" type="submit" className='detail-btn'>
+                      <Button
+                        variant="primary"
+                        type="submit"
+                        className='detail-btn'
+                    onClick={e => history.push(`/visit/${match.params.id}`)}
+                      >
                         Schedule Virtual Visit
                       </Button>
                     </div>
