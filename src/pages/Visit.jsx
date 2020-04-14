@@ -4,6 +4,7 @@ import {
     Container,
     Form,
     Col,
+    Row,
     Button
     } from 'react-bootstrap'
 import axios from 'axios'
@@ -16,6 +17,10 @@ class Visit extends Component {
         pet: {} 
     }
     
+    // fetch('/visit/1') 
+    // .then(res => res.json())
+    // .then(res => console.log(res))
+
     getPet=() => {
     //     let petId=this.props.match.params.petId
     //     axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
@@ -39,23 +44,24 @@ class Visit extends Component {
     
     render() {
             return (
-
-            <Container>
+            <Row>
+            <Col xs={12} md={8}>
+            <Container className='Form'>
             <br>
             </br>
             <div>
               <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
             </div>
-            <Form>
-            <Form.Row className='form'>
+            <Form >
+            <Form.Row>
                 <Form.Group as={Col} controlId="tempfield">
-                <Form.Label>Pet Image Display</Form.Label>
-                <Form.Control type="fname" placeholder="Add Image Event Listener Here" />
+                <Form.Label>Pet Pic</Form.Label>
+                <Form.Control type="fname" placeholder="Add Image" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="Selected Pet Name">
-                <Form.Label>Note: Import pet name here</Form.Label>
-                <Form.Control type="petName" placeholder="Add pet name event listener" />
+                <Form.Label>Pet Name</Form.Label>
+                <Form.Control type="petName" placeholder="Add pet name" />
                 </Form.Group>
             </Form.Row>
             <hr>
@@ -187,6 +193,13 @@ class Visit extends Component {
             </Button>
             </Form>
             </Container>
+            </Col>
+            <Col xs={6} md={4}>
+                <Row> Row 1</Row>
+                <Row> Row 2</Row>
+                <Row> Row 3</Row>
+            </Col>
+            </Row>
         );
     }
 }
