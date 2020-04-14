@@ -13,7 +13,7 @@ import {
 class Footer extends Component {
     render() {
         return (
-            <div class="content">
+            <div className="content">
               <Nav className="mr-auto" className="color-nav">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About Us</Nav.Link>
@@ -29,7 +29,7 @@ class Footer extends Component {
                   className="d-inline-block align-top"
                   />{' '}
                 </Nav>
-                <div class="push"></div>
+                <div className="push"></div>
             </div>
         );
     }
