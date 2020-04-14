@@ -1,30 +1,64 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
+import { Button } from 'react-bootstrap'
+import axios from 'axios'
 import './Details.css'
 import Pug from '../images/pug.jpg'
 import Bone from '../images/bone.png'
 import Ball from '../images/ball.png'
 import Rope from '../images/rope.png'
 
-class Details extends Component {
+const Details = ({ pets }) => {
 
-  state = {
-    name: '',
-    bred_for: '',
-    temperament: '',
-    breed_group: ''
+  const [dog, setDog] = useState({ dogs: [] })
+
+  let {id} = useParams()
+  const pet = pets.filter(pet => id == pet.id)
+
+  async function fetchData() {
+    const res = await fetch("https://api.thedogapi.com/v1/breeds");
+    res
+      .json()
+      .then(res => setDog(res))
   }
 
-  componentDidMount() {
-    axios.get('https://api.thedogapi.com/v1/breeds')
-      .then( response => {
-          let data = response.data[0]
-          this.setState( data )
-      })
-  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    render() {
+  console.log(dog.name)
+
+
+  // const dogApi = async () => {
+  //   const { data } =  await axios(
+  //     `https://api.thedogapi.com/v1/breeds`
+  //   )
+  //     setDog({ dogs: data })
+  // }
+
+  // useEffect(() => {
+  //   dogApi()
+  // }, [])
+
+  // const breed = pets.map( pup => {
+  //   let petFinder = pup.breeds.primary
+
+  //   let petApi = dog.dogs
+  //   return petApi
+  
+  // })
+
+   function description() {
+      if (pet[0].description) {
+        return pet[0].description
+      } else {
+        return "Is your name Wifi? Cuz I'm feeling a connection"
+      }
+    }
+
+    const dogPic = pet[0].photos[0] ?  pet[0].photos[0].medium : 'https://cdn4.vectorstock.com/i/1000x1000/29/73/dog-silhouette-vector-22362973.jpg'
+
         return (
             <div className='page'>
 
@@ -32,25 +66,27 @@ class Details extends Component {
                 <div className='profile-container'>
                   <div className='left-container'>
                     <div className='profile-pic-container'>
-                      <img src={Pug} alt='pug pic' className='profile-pic'></img>
+                      <img src={dogPic} alt='adoptable pic' className='profile-pic'></img>
                     </div>
 
-                    <div className='bio'>
-                    "Is your name Wifi? Cuz I'm feeling a connection"
-                    </div>
+                    <div className='bio'>{description()}</div>
                   </div>
 
                   <div className='right-container'>
                     <div className='dog-facts-container'>
-                      <div className='dog-facts-title'>DOGNAME is:</div>
-                      <div className='dog-facts'>Fun, Loving, Good with Cats, and Playful</div>
+                      <div className='dog-facts-title'>{pet[0].name}</div>
+                      <div className='dog-facts'>Gender: {pet[0].gender}</div>
+                      <div className='dog-facts'>Age: {pet[0].age}</div>
+                      <div className='dog-facts'>Size: {pet[0].size}</div>
+                      <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
+                      <div className='dog-facts'>Location: {pet[0].contact.address.city}, {pet[0].contact.address.state}</div>
                     </div>
 
                     <div className='breed-facts-container'>
-                      <div className='breed-facts-title'>{this.state.name}s are:</div>
-                      <div className='breed-facts'>Bred for: {this.state.bred_for}</div>
-                      <div className='breed-facts'>Temperament: {this.state.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {this.state.breed_group}</div>
+                      {/* <div className='breed-facts-title'>{dog.dogs.name}s are:</div>
+                      <div className='breed-facts'>Bred for: {dog.dogs.bred_for}</div>
+                      <div className='breed-facts'>Temperament: {dog.dogs.temperament}</div>
+                      <div className='breed-facts'>Breed Group: {dog.dogs.breed_group}</div> */}
                     </div>
                   </div>
                 </div>
@@ -75,22 +111,30 @@ class Details extends Component {
                 </div>
 
                   <div className='button-container'>
-                  <div className='adopt-button-container'>
-                    <button>Adopt Me</button>
+                    <div className='adopt-button-container'>
+                      <Button variant="primary" type="submit" className='detail-btn'>
+                        Adopt Me
+                      </Button>
+                    </div>
+
+                    <div className='visit-button-container'>
+                      <Button variant="primary" type="submit" className='detail-btn'>
+                        Schedule Virtual Visit
+                      </Button>
+                    </div>
                   </div>
 
-                  <div className='visit-button-container'>
-                    <button>Schedule Virtual Visit</button>
+                  <div className='sponsor'>
+                    <Sponsor pet={pets}/>
                   </div>
-                </div>
 
-                <div className='sponsor'>
-                  <Sponsor />
-                </div>
+                  <div className='why-sponsor-container'>
+                    <div className='why-sponsor'>Why Sponsor?</div>
+                    <div className='why-desciption'>Sponsoring a pet will help with supplemental care. Your contribution will go towards additional medical care the pet requires. It also upgrades their current bed, bowls, food, and toys.</div>
+                  </div>
               </div>
             </div>
         );
-    }
 }
 
 export default Details;

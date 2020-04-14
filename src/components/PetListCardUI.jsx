@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./PetListCards.css";
+import { Link } from 'react-router-dom'
 
 const PetListCardUI = ({ pet }) => {
   return (
@@ -16,6 +17,10 @@ const PetListCardUI = ({ pet }) => {
           <Button variant="primary">Pet Details</Button>
         </Card.Body>
       </Card>
+
+      <Link to={`/details/${pet.id}`} className="btn btn-outline-success">
+        Go Anywhere
+      </Link>
     </div>
   );
 };

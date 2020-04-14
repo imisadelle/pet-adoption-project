@@ -24,7 +24,6 @@ export default class App extends React.Component {
     // alert("Your chosen dog breed is: " + this.state.value);
     event.preventDefault();
     // grab the values from the form and apply them to a fetch ("GET") request
-    ``;
     // use this.setState({}) to set properties of state object
   }
 

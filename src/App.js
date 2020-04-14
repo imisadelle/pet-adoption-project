@@ -6,12 +6,15 @@ import Details from './pages/Details'
 import Visit from './pages/Visit'
 import NavBar from './components/NavBar'
 import Resources from './pages/Resources'
+import { petList } from './data/pet_list'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css"
+import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -24,14 +27,14 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/visit">
+          <Route path="/visit/:petId">
             <Visit />
           </Route>
           <Route path="/resources">
             <Resources />
           </Route>
-          <Route path="/details">
-            <Details />
+          <Route path="/details/:id">
+            <Details pets={petList}/>
           </Route>
           <Route path="/master">
             <Master />
@@ -40,26 +43,14 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   );
 }
 
 
-// function App() {
-//   return (
-    
-//     <div> 
-//     <Home/>
-//     <About/>
-//     <Master/>
-//     <Details/>
-//     <Visit/>
-//     <Resources/>
 
-//     </div>
-//   );
-// }
 
 
 
