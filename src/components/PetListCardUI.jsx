@@ -14,13 +14,11 @@ const PetListCardUI = ({ pet }) => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </Card.Text>
-          <Button variant="primary">Pet Details</Button>
+          <Link to={`/details/${pet.id}`} className="btn">
+            Pet Details
+          </Link>
         </Card.Body>
       </Card>
-
-      <Link to={`/details/${pet.id}`} className="btn btn-outline-success">
-        Go Anywhere
-      </Link>
     </div>
   );
 };

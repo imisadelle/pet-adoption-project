@@ -1,6 +1,6 @@
 .jumbotron {
-    background-image: url(https://www.realestate-tokyo.com/media/5938/animal-shelter2.jpg);   
-    background-repeat: no-repeat, repeat; 
+    background-image: url(https://www.realestate-tokyo.com/media/5938/animal-shelter2.jpg);
+    background-repeat: no-repeat, repeat;
     background-position: center;
     background-size: cover;
     padding: top 50px;
@@ -11,7 +11,7 @@
     border-radius: 50px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75)
     }
- 
+
 
 .color-nav {
     background-color: #93F7C2;
@@ -21,24 +21,32 @@
     color:#93F7C2;
 }
 
+.btn-pet-green {
+  color: #6bcf9a !important;
+}
+
+.btn-pet-green:active {
+  color: cadetblue !important;
+}
+
 .jumbotron h1 {
     background-color: #ffffff73;
     padding: 25px;
-} 
+}
 
 .jumbotron h2, h3 {
     color: black;
     font-weight: bold;
     text-align: center;
-    
-    } 
-    
+
+    }
+
 .jumbotron h1 {
     color: #3f5035;
     stroke-width: 2px, black;
-    
+
     font-weight: bold;
-    
+
 }
 
 .jumbotron div {
