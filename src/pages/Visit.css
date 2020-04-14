@@ -1,0 +1,14 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1px 1px;
+}
+
+.Form { grid-area: 1 / 1 / 4 / 4; }
+
+.Environment { grid-area: 1 / 4 / 2 / 5; }
+
+.Attributes { grid-area: 2 / 4 / 3 / 5; }
+
+.Video { grid-area: 3 / 4 / 4 / 5; }
