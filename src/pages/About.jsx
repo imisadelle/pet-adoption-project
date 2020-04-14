@@ -35,6 +35,8 @@ class About extends Component {
                     </Row>
                     </Container>
                 </Container>
+
+              
         );
     }
 }
