@@ -13,36 +13,36 @@ import { petList } from "../data/pet_list"
 
 
 class Visit extends Component {
-    state = { 
-        pet: {} 
+    state = {
+        pet: {}
     }
-    
     // fetch('/visit/1') 
     // .then(res => res.json())
     // .then(res => console.log(res))
 
     getPet=() => {
-    //     let petId=this.props.match.params.petId
-    //     axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.cache.pet_finder_token}}`)
-    //     .then(response => this.setState({ pet: response.data }))
+      let petId = this.props.match.params.petId
+      axios.get(`https://pt12-final-backend.herokuapp.com/pet/${petId}?token=${window.caches.pet_finder_token}}`)
+        .then(response => this.setState({ pet: response.data }))
     }
-    
+
     componentDidMount(){
-    //     if (!window.cache.pet_finder_token) {  //means: if the token does not exist then get it and save
-    //         axios.get('https://pt12-final-backend.herokuapp.com/')
-    //           .then(response => {
-    //          window.cache.pet_finder_token(response.data)
-    //          this.getPet()
-    //         })     
-    //       }
-    //       else {this.getPet()}
-        this.setState({
-            pet: petList[0]
-        })
+      if (!window.caches.pet_finder_token) {  //means: if the token does not exist then get it and save
+          axios.get('https://pt12-final-backend.herokuapp.com/')
+            .then(response => {
+              window.caches.pet_finder_token = response.data
+              this.getPet()
+            })
+        }
+        else {
+          this.getPet()
+        }
+        this.setState({pet: petList[0]})
     }
-    
-    
+
     render() {
+      let img = this.state.pet.photos && this.state.pet.photos[0].medium
+      let alt = this.state.pet.breeds && `A ${this.state.pet.breeds.primary} dog`
             return (
             <Row>
             <Col xs={12} md={8}>
@@ -54,15 +54,15 @@ class Visit extends Component {
             </div>
             <Form >
             <Form.Row>
-                <Form.Group as={Col} controlId="tempfield">
-                <Form.Label>Pet Pic</Form.Label>
-                <Form.Control type="fname" placeholder="Add Image" />
-                </Form.Group>
+              <Form.Group as={Col} controlId="tempfield">
+                <Form.Label>Pet Image Display</Form.Label>
+                  <img src={img} alt={alt}/>
+              </Form.Group>
 
-                <Form.Group as={Col} controlId="Selected Pet Name">
-                <Form.Label>Pet Name</Form.Label>
-                <Form.Control type="petName" placeholder="Add pet name" />
-                </Form.Group>
+              <Form.Group as={Col} controlId="Selected Pet Name">
+              <Form.Label>Note: Import pet name here</Form.Label>
+              <Form.Control type="petName" placeholder="Add pet name event listener" />
+              </Form.Group>
             </Form.Row>
             <hr>
             </hr>
