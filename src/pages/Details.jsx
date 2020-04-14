@@ -11,23 +11,52 @@ import Rope from '../images/rope.png'
 
 const Details = ({ pets, history, match }) => {
 
-  const [dog, setDog] = useState({ dogs: [] })
+  // const [dog, setDog] = useState({ dogs: [] })
+
+  const [petFinder, setPetFinder] = useState({ pups: [] })
 
   let {id} = useParams()
   const pet = pets.filter(pet => id == pet.id)
 
-  async function fetchData() {
-    const res = await fetch("https://api.thedogapi.com/v1/breeds");
-    res
-      .json()
-      .then(res => setDog(res))
-  }
+  const getPet = async () => {
+    const { data } = await axios.get(
+      `/pet_finder/pets?token=${window.caches.pet_finder_token}&animal=dog`
+    )
+    .then(response => {
+      setPetFinder({ pups: response.data})
+    });
+    // setPetFinder({ pups: data.pups });
+  };
 
   useEffect(() => {
-    fetchData();
+    if (!window.caches.pet_finder_token) {  //means: if the token does not exist then get it and save
+      axios.get('/pet_finder/auth')
+      .then(response => {
+        window.caches.pet_finder_token = response.data
+        getPet()
+      })
+    }
+    else {
+      getPet()
+    }
   }, []);
 
-  console.log(dog.name)
+  console.log(petFinder)
+
+
+
+  // async function fetchData() {
+  //   const res = await fetch("https://api.thedogapi.com/v1/breeds");
+  //   res
+  //     .json()
+  //     .then(res => setDog(res))
+  // }
+
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+
+  // console.log(dog.name)
 
 
   // const dogApi = async () => {
