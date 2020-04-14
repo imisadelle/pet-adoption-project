@@ -1,0 +1,10 @@
+.pet-filter {
+  display: inline-block;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 8px;
+  color: darkslateblue;
+}
+
+.petlist-btn {
+  border-radius: 4rem;
+}
