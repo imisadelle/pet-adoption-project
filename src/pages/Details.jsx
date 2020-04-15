@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
@@ -11,53 +12,66 @@ import Rope from '../images/rope.png'
 
 const Details = ({ pets, history, match }) => {
 
-  const [dog, setDog] = useState({ dogs: [] })
-
-  let {id} = useParams()
-  const pet = pets.filter(pet => id == pet.id)
-
-  async function fetchData() {
-    const res = await fetch("https://api.thedogapi.com/v1/breeds");
-    res
-      .json()
-      .then(res => setDog(res))
+  let initialData = {
+    photos: [ {} ],
+    contact: { address: {} },
+    breeds: {}
   }
 
+  const [petFinder, setPetFinder] = useState(initialData)
+  // const [breed, setBreed] = useState({})
+
+  // let {id} = useParams()
+  // const pet = pets.filter(pet => id == pet.id)
+
+  const getPet = async () => {
+    const { data } = await axios.get(
+      `/pet_finder/pet/${match.params.id}?token=${window.caches.pet_finder_token}`
+    )
+    setPetFinder(data.animal)
+    console.log("animal set", data.animal.breeds.primary)
+    // getBreeds()
+  };
+
+  // getting data fro pet finder
   useEffect(() => {
-    fetchData();
+    if (!window.caches.pet_finder_token) {  //means: if the token does not exist then get it and save
+      axios.get('/pet_finder/auth')
+        .then(response => {
+          window.caches.pet_finder_token = response.data
+          getPet()
+        })
+    }
+    else {
+      getPet()
+    }
   }, []);
 
-  console.log(dog.name)
-
-
-  // const dogApi = async () => {
-  //   const { data } =  await axios(
-  //     `https://api.thedogapi.com/v1/breeds`
-  //   )
-  //     setDog({ dogs: data })
+  // getting data from dog API
+  // const getBreeds = async () => {
+  //   const res = await fetch("https://api.thedogapi.com/v1/breeds");
+  //   res
+  //     .json()
+  //     .then(res => {
+  //       console.log(res)
+  //       let breedInfo = res.filter(elem => elem.name === petFinder.breeds.primary)
+  //       setBreed(breedInfo[0])
+  //       console.log("breeds set", breedInfo)
+  //     })
   // }
 
-  // useEffect(() => {
-  //   dogApi()
-  // }, [])
+  // console.log(petFinder.breeds.primary)
 
-  // const breed = pets.map( pup => {
-  //   let petFinder = pup.breeds.primary
-
-  //   let petApi = dog.dogs
-  //   return petApi
-
-  // })
 
    function description() {
-      if (pet[0].description) {
-        return pet[0].description
+      if (petFinder.description) {
+        return petFinder.description
       } else {
         return "Is your name Wifi? Cuz I'm feeling a connection"
       }
     }
 
-    const dogPic = pet[0].photos[0] ?  pet[0].photos[0].medium : 'https://cdn4.vectorstock.com/i/1000x1000/29/73/dog-silhouette-vector-22362973.jpg'
+    const dogPic = petFinder.photos[0] ?  petFinder.photos[0].medium : 'https://cdn4.vectorstock.com/i/1000x1000/29/73/dog-silhouette-vector-22362973.jpg'
 
         return (
             <div className='page'>
@@ -74,19 +88,19 @@ const Details = ({ pets, history, match }) => {
 
                   <div className='right-container'>
                     <div className='dog-facts-container'>
-                      <div className='dog-facts-title'>{pet[0].name}</div>
-                      <div className='dog-facts'>Gender: {pet[0].gender}</div>
-                      <div className='dog-facts'>Age: {pet[0].age}</div>
-                      <div className='dog-facts'>Size: {pet[0].size}</div>
-                      <div className='dog-facts'>Adoption Status: {pet[0].status}</div>
-                      <div className='dog-facts'>Location: {pet[0].contact.address.city}, {pet[0].contact.address.state}</div>
+                      <div className='dog-facts-title'>{petFinder.name}</div>
+                      <div className='dog-facts'>Gender: {petFinder.gender}</div>
+                      <div className='dog-facts'>Age: {petFinder.age}</div>
+                      <div className='dog-facts'>Size: {petFinder.size}</div>
+                      <div className='dog-facts'>Adoption Status: {petFinder.status}</div>
+                      <div className='dog-facts'>Location: {petFinder.contact.address.city}, {petFinder.contact.address.state}</div>
                     </div>
 
                     <div className='breed-facts-container'>
-                      {/* <div className='breed-facts-title'>{dog.dogs.name}s are:</div>
-                      <div className='breed-facts'>Bred for: {dog.dogs.bred_for}</div>
-                      <div className='breed-facts'>Temperament: {dog.dogs.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {dog.dogs.breed_group}</div> */}
+                    {/* <div className='breed-facts-title'>{breed.name}s are:</div>
+                      <div className='breed-facts'>Bred for: {breed.bred_for}</div>
+                      <div className='breed-facts'>Temperament: {breed.temperament}</div>
+                      <div className='breed-facts'>Breed Group: {breed.breed_group}</div> */}
                     </div>
                   </div>
                 </div>
@@ -130,7 +144,7 @@ const Details = ({ pets, history, match }) => {
                   </div>
 
                   <div className='sponsor'>
-                    <Sponsor pet={pets}/>
+                    <Sponsor pet={petFinder}/>
                   </div>
 
                   <div className='why-sponsor-container'>
