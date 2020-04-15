@@ -19,7 +19,7 @@ const Details = ({ pets, history, match }) => {
   }
 
   const [petFinder, setPetFinder] = useState(initialData)
-  const [breed, setBreed] = useState({})
+  // const [breed, setBreed] = useState({})
 
   // let {id} = useParams()
   // const pet = pets.filter(pet => id == pet.id)
@@ -30,7 +30,7 @@ const Details = ({ pets, history, match }) => {
     )
     setPetFinder(data.animal)
     console.log("animal set", data.animal.breeds.primary)
-    getBreeds()
+    // getBreeds()
   };
 
   // getting data fro pet finder
@@ -48,51 +48,20 @@ const Details = ({ pets, history, match }) => {
   }, []);
 
   // getting data from dog API
-  const getBreeds = async () => {
-    const res = await fetch("https://api.thedogapi.com/v1/breeds");
-    res
-      .json()
-      .then(res => {
-        console.log(res)
-        let breedInfo = res.filter(elem => elem.name === petFinder.breeds.primary)
-        setBreed(breedInfo[0])
-        console.log("breeds set", breedInfo)
-
-      })
-  }
-
-  // async function fetchData() {
+  // const getBreeds = async () => {
   //   const res = await fetch("https://api.thedogapi.com/v1/breeds");
   //   res
   //     .json()
-  //     .then(res => setDog(res))
+  //     .then(res => {
+  //       console.log(res)
+  //       let breedInfo = res.filter(elem => elem.name === petFinder.breeds.primary)
+  //       setBreed(breedInfo[0])
+  //       console.log("breeds set", breedInfo)
+  //     })
   // }
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  // console.log(petFinder.breeds.primary)
 
-  // console.log(dog.name)
-
-
-  // const dogApi = async () => {
-  //   const { data } =  await axios(
-  //     `https://api.thedogapi.com/v1/breeds`
-  //   )
-  //     setDog({ dogs: data })
-  // }
-
-  // useEffect(() => {
-  //   dogApi()
-  // }, [])
-
-  // const breed = pets.map( pup => {
-  //   let petFinder = pup.breeds.primary
-
-  //   let petApi = dog.dogs
-  //   return petApi
-
-  // })
 
    function description() {
       if (petFinder.description) {
@@ -128,10 +97,10 @@ const Details = ({ pets, history, match }) => {
                     </div>
 
                     <div className='breed-facts-container'>
-                    <div className='breed-facts-title'>{breed.name}s are:</div>
+                    {/* <div className='breed-facts-title'>{breed.name}s are:</div>
                       <div className='breed-facts'>Bred for: {breed.bred_for}</div>
                       <div className='breed-facts'>Temperament: {breed.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {breed.breed_group}</div>
+                      <div className='breed-facts'>Breed Group: {breed.breed_group}</div> */}
                     </div>
                   </div>
                 </div>
