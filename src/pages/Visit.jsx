@@ -9,7 +9,10 @@ import {
     } from 'react-bootstrap'
 import axios from 'axios'
 import { petList } from "../data/pet_list"
-// import DatePicker from 'react-datepicker'
+// import {
+//     DatePicker,
+//     startDate
+//     } from 'react-datepicker'
 
 
 class Visit extends Component {
@@ -37,12 +40,17 @@ class Visit extends Component {
         else {
           this.getPet()
         }
-        this.setState({pet: petList[0]})
+        this.setState({pet: petList[7]})
+        // this.setState({petId})
     }
 
     render() {
       let img = this.state.pet.photos && this.state.pet.photos[0].medium
       let alt = this.state.pet.breeds && `A ${this.state.pet.breeds.primary} dog`
+      let petName = this.state.pet.name && ` ${this.state.pet.name} `
+      let petGender = this.state.pet.gender && `A ${this.state.gender} dog`
+      let petStatus  = this.state.pet.status && `A ${this.state.pet.status} dog`
+
             return (
             <Row>
             <Col xs={12} md={8}>
@@ -50,18 +58,12 @@ class Visit extends Component {
             <br>
             </br>
             <div>
-              <h2>Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with this pet</h2>
+              <h2 className="text-center">Complete form to schedule a <span style={{fontStyle: 'italic'}}>Virtual Visit</span> with  <span style={{fontWeight: 'bold'}}>{ petName }</span> </h2>
             </div>
             <Form >
             <Form.Row>
-              <Form.Group as={Col} controlId="tempfield">
-                <Form.Label>Pet Image Display</Form.Label>
+              <Form.Group as={Col} controlId="tempfield" className="text-center">
                   <img src={img} alt={alt}/>
-              </Form.Group>
-
-              <Form.Group as={Col} controlId="Selected Pet Name">
-              <Form.Label>Note: Import pet name here</Form.Label>
-              <Form.Control type="petName" placeholder="Add pet name event listener" />
               </Form.Group>
             </Form.Row>
             <hr>
@@ -180,7 +182,6 @@ class Visit extends Component {
                 <Form.Group as={Col} controlId="formGridCalendar">
                 <Form.Label>Insert Calendar Picker</Form.Label>
                 <Form.Control />
-                {/* <DatePicker selected={startDate} onChange={date => setStartDate(date)} /> */}
                 </Form.Group>
             </Form.Row>
 
@@ -195,9 +196,12 @@ class Visit extends Component {
             </Container>
             </Col>
             <Col xs={6} md={4}>
-                <Row> Row 1</Row>
+                <Row> Attributes</Row>
+                <div>import option</div>
                 <Row> Row 2</Row>
+                <div></div>
                 <Row> Row 3</Row>
+                <div></div>
             </Col>
             </Row>
         );
