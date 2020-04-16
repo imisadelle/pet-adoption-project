@@ -1,19 +1,19 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 import "./PetListCards.css";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const PetListCardUI = ({ pet }) => {
   return (
-    <div style={{ marginBottom: "2em" }}>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src="src/images/ball.png" />
+    <div className="card text-center" style={{ marginBottom: "2em" }}>
+      <Card style={{ width: "22rem" }}>
+        <Card.Img
+          variant="top"
+          src="https://media.istockphoto.com/photos/shelter-dog-picture-id547023642"
+          alt="pet img api"
+        />
         <Card.Body>
           <Card.Title>{pet.name}</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
           <Link to={`/details/${pet.id}`} className="btn">
             Pet Details
           </Link>
@@ -24,17 +24,3 @@ const PetListCardUI = ({ pet }) => {
 };
 
 export default PetListCardUI;
-
-{
-  /* <div className="overflow">
-        <img src="ball.npg" alt="" />
-      </div>
-      <div className="card-body text-dark">
-        <h4 className="card-title">{pet.name}</h4>
-        <img src="src/images/ball.png" alt="petlist-img" />
-        <p className="card-text text-secondary">{pet.description}</p>
-        <a href="#" className="btn btn-outline-success">
-          Pet Details
-        </a>
-      </div> */
-}
