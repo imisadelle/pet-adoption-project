@@ -7,7 +7,7 @@
     margin-bottom: 100px;
     padding: 50px;
     border-radius: 50px;
-    }
+}
 
 .aboutUs h1 {
     color: white;
@@ -17,4 +17,25 @@
 .aboutUs h2 {
     color: wheat;
     text-align: center;
+}
+
+.about-bio-container {
+  margin: 5rem 10rem;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.love-animals {
+  text-align: center;
+}
+
+.dog-quote {
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.card-cols {
+  margin: 5rem;
 }
