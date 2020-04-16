@@ -7,18 +7,16 @@ const Sponsor= ({ pet }) => {
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  // const toggleView = () => setShow(!show)
+  const toggleView = () => setShow(!show)
 
-  let {id} = useParams()
-  // const pets = pet.filter(pet => id == pet.id)
   let pets = [{}]
+  console.log('pets', pets)
+  
     return (
       <div className='sponsor-container'>
         <div className='sponsor-title'>Sponsor {pets[0].name}</div>
 
-        <Form onSubmit={handleShow}>
+        <Form onSubmit={toggleView}>
           <Form.Row>
             <Form.Group as={Col} controlId="formGridEmail">
               <Form.Label>Email</Form.Label>
@@ -68,15 +66,15 @@ const Sponsor= ({ pet }) => {
             <Form.Check type="checkbox" label="Monthly Donation" />
           </Form.Group>
 
-          <Button variant="primary" type="submit" onClick={handleShow}>
+          <Button variant="success" type="submit">
             Submit
           </Button>
         </Form>
 
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={toggleView}>
           <Modal.Body>Thank you for your donation!</Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button variant="secondary" onClick={toggleView}>
               Close
             </Button>
           </Modal.Footer>
