@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import Sponsor from '../components/Sponsor'
 import { Button } from 'react-bootstrap'
 import axios from 'axios'
@@ -18,19 +17,27 @@ const Details = ({ pets, history, match }) => {
     breeds: {}
   }
 
-  const [petFinder, setPetFinder] = useState(initialData)
-  // const [breed, setBreed] = useState({})
+  let breedDefault = {
+    name: "Unknown",
+    bred_for:"Unknown",
+    temperament: "Unknown",
+    breed_group: "Unknown",
+  }
 
-  // let {id} = useParams()
-  // const pet = pets.filter(pet => id == pet.id)
+  const [petFinder, setPetFinder] = useState(initialData)
+  const [breed, setBreed] = useState(breedDefault)
 
   const getPet = async () => {
     const { data } = await axios.get(
       `/pet_finder/pet/${match.params.id}?token=${window.caches.pet_finder_token}`
     )
-    setPetFinder(data.animal)
-    console.log("animal set", data.animal.breeds.primary)
-    // getBreeds()
+
+    if(data && data.animal) {
+      setPetFinder(data.animal)
+    }
+    if(data && data.animal && data.animal.breeds && data.animal.breeds.primary) {
+      getBreeds(data.animal.breeds.primary)
+    }
   };
 
   // getting data fro pet finder
@@ -46,22 +53,19 @@ const Details = ({ pets, history, match }) => {
       getPet()
     }
   }, []);
-
+  
   // getting data from dog API
-  // const getBreeds = async () => {
-  //   const res = await fetch("https://api.thedogapi.com/v1/breeds");
-  //   res
-  //     .json()
-  //     .then(res => {
-  //       console.log(res)
-  //       let breedInfo = res.filter(elem => elem.name === petFinder.breeds.primary)
-  //       setBreed(breedInfo[0])
-  //       console.log("breeds set", breedInfo)
-  //     })
-  // }
-
-  // console.log(petFinder.breeds.primary)
-
+  const getBreeds = async (breedPrimary) => {
+    const res = await fetch("https://api.thedogapi.com/v1/breeds");
+    res
+      .json()
+      .then(res => {
+        let breedInfo = res.filter(elem => elem.name === breedPrimary);
+        if(breedInfo && breedInfo[0]) {
+          setBreed(breedInfo[0])
+        }
+      });
+  }
 
    function description() {
       if (petFinder.description) {
@@ -69,6 +73,23 @@ const Details = ({ pets, history, match }) => {
       } else {
         return "Is your name Wifi? Cuz I'm feeling a connection"
       }
+    }
+
+    function renderBreeds(renderedBreed) {   
+      return (
+        <div className='breed-facts-container'>
+          {renderedBreed.name === 'Unknown'
+          ? <div className='breed-facts'></div>
+          : ( 
+          <>
+            <div className='breed-facts-title'>{renderedBreed.name}s are:</div>
+            <div className='breed-facts'>Bred for: {renderedBreed.bred_for}</div>
+            <div className='breed-facts'>Temperament: {renderedBreed.temperament}</div>
+            <div className='breed-facts'>Breed Group: {renderedBreed.breed_group}</div>
+          </>
+        )}
+        </div>
+      );
     }
 
     const dogPic = petFinder.photos[0] ?  petFinder.photos[0].medium : 'https://cdn4.vectorstock.com/i/1000x1000/29/73/dog-silhouette-vector-22362973.jpg'
@@ -95,13 +116,7 @@ const Details = ({ pets, history, match }) => {
                       <div className='dog-facts'>Adoption Status: {petFinder.status}</div>
                       <div className='dog-facts'>Location: {petFinder.contact.address.city}, {petFinder.contact.address.state}</div>
                     </div>
-
-                    <div className='breed-facts-container'>
-                    {/* <div className='breed-facts-title'>{breed.name}s are:</div>
-                      <div className='breed-facts'>Bred for: {breed.bred_for}</div>
-                      <div className='breed-facts'>Temperament: {breed.temperament}</div>
-                      <div className='breed-facts'>Breed Group: {breed.breed_group}</div> */}
-                    </div>
+                    {renderBreeds(breed)}
                   </div>
                 </div>
 
@@ -126,14 +141,14 @@ const Details = ({ pets, history, match }) => {
 
                   <div className='button-container'>
                     <div className='adopt-button-container'>
-                      <Button variant="primary" type="submit" className='detail-btn'>
+                      <Button variant="success" type="submit" className='detail-btn'>
                         Adopt Me
                       </Button>
                     </div>
 
                     <div className='visit-button-container'>
                       <Button
-                        variant="primary"
+                        variant="success"
                         type="submit"
                         className='detail-btn'
                     onClick={e => history.push(`/visit/${match.params.id}`)}
