@@ -6,7 +6,7 @@
     margin-top: 75px;
     margin-bottom: 100px;
     padding: 50px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
 }
 
 .aboutUs h1 {
@@ -19,8 +19,20 @@
     text-align: center;
 }
 
+.alexia-pic {
+  height: 61%;
+}
+
 .about-bio-container {
   margin: 5rem 10rem;
+}
+
+.about-title {
+  font-size: 30px;
+}
+
+.about-text {
+  font-size: 20px;
 }
 
 .list-group-item {
@@ -29,6 +41,14 @@
 
 .love-animals {
   text-align: center;
+}
+
+.love-line {
+  border-bottom: solid;
+  border-width: thin;
+  border-color: darkgreen;
+  width: 30%;
+  margin: auto;
 }
 
 .dog-quote {

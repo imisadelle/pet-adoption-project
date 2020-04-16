@@ -17,7 +17,6 @@ import IM_kittens from '../images/IM_kittens.jpg'
 import DP_pets from '../images/darci_pet_pic.jpg'
 import DP_dogs from '../images/darci_animal_pic.jpg'
 import DP_profile from '../images/darci_profile_pic.jpg'
-import DP_cat from '../images/kat.jpeg'
 import AP_dog from '../images/Alexia_dog.png'
 
 class About extends Component {
@@ -25,7 +24,7 @@ class About extends Component {
         return (
         <div className='page'>
 
-            <div>
+            {/* <div>
               <Container className="aboutUs">
                 <h1>Learning is a Journey</h1>
                 <div>
@@ -45,15 +44,20 @@ class About extends Component {
                   </Row>
                 </Container>
               </Container>
+            </div> */}
+
+            <div className='aboutUs'>
+              <h1>Learning is a Journey</h1>
+              <h2>The path to self-improvement led us to Wyncode</h2>
             </div>
             
             <CardDeck className='about-bio-container'>
               <Card className='about-bio-card'>
-              {/* <Card.Img variant="top" src={ IM_profile } /> */}
+              <Card.Img variant="top" src={ IM_profile } />
                 <Card.Body>
-                    <Card.Title>ISADELLE MERCEDES</Card.Title>
-                    <Card.Text>
-                    Professional Background: Innovative and skilled Manager, Analyst, Scrum Master and Learning and Development professional with over 18 years
+                    <Card.Title className='about-title'>ISADELLE MERCEDES</Card.Title>
+                    <Card.Text className='about-text'>
+                    <span style={{fontWeight: 900}}>Professional Background: </span> Innovative and skilled Manager, Analyst, Scrum Master and Learning and Development professional with over 18 years
                     of experience working within Sales, Risk Management, technology, and pharmaceutical industries. Masterful
                     requirements elicitation, solution planning, client interfacing, process improvements and business analysis.
                     </Card.Text>
@@ -72,11 +76,11 @@ class About extends Component {
               </Card>
 
               <Card className='about-bio-card'>
-                {/* <Card.Img variant="top" src={ darci_profile_pic } /> */}
+                <Card.Img variant="top" src={ DP_profile } />
                 <Card.Body>
-                    <Card.Title>DARCI PONS</Card.Title>
-                    <Card.Text>
-                    Why Wyncode:   Joining Wyncode has been one of the greatest decisions I've ever made. Since graduating from C34 I've leaned more toward Front-End Development. I can't wait to learn more about JavaScript and React in order to create user-friendly websites.
+                    <Card.Title className='about-title'>DARCI PONS</Card.Title>
+                    <Card.Text className='about-text'>
+                    <span style={{fontWeight: 900}}>Why Wyncode: </span>Joining Wyncode has been one of the greatest decisions I've ever made. Since graduating from C34 I've leaned more toward Front-End Development. I can't wait to learn more about JavaScript and React to create user-friendly websites.
                     </Card.Text>
                 </Card.Body>
                 <ListGroup horizontal className="list-group-flush">
@@ -93,11 +97,11 @@ class About extends Component {
                 </Card>
 
               <Card>
-                {/* <Card.Img variant="top" src="https://ca.slack-edge.com/T055GEHEJ-UN66Y5AJK-067dd872a453-512" /> */}
+                <Card.Img className='alexia-pic' variant="top" src="https://ca.slack-edge.com/T055GEHEJ-UN66Y5AJK-067dd872a453-512" />
                 <Card.Body>
-                    <Card.Title>ALEXIA PANAMENO</Card.Title>
-                    <Card.Text>
-                    Wyncode C35 recently-graduated full stack web developer, multicultural professional with a voracious appetite for knowledge and tech.
+                    <Card.Title className='about-title'>ALEXIA PANAMENO</Card.Title>
+                    <Card.Text className='about-text'>
+                    <span style={{fontWeight: 900}}>Recent Grad:</span>Wyncode C35 recently-graduated full stack web developer, multicultural professional with a voracious appetite for knowledge and tech.
                     </Card.Text>
                 </Card.Body>
                 <ListGroup horizontal className="list-group-flush">
@@ -115,6 +119,7 @@ class About extends Component {
             </CardDeck>
 
             <h1 className='love-animals'>Oh, and we love animals</h1>
+            <div className='love-line'></div>
            
             {/* Note: just use cards to display our pics with animals randomly on the page */}
 
