@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
 import { Form, Button, Col, Modal } from 'react-bootstrap'
 import './Sponsor.css'
 
