@@ -13,7 +13,7 @@ import {
   } from 'react-bootstrap';
   import './About.css';
   import IM_profile from '../images/IM_profile.jpeg'
-  import IM_dog from '../images/IM_dog.jpg'
+  import IM_dog from '../images/IM_dog.png'
   import IM_kittens from '../images/IM_kittens.jpg'
   import darci_pet_pic from '../images/darci_pet_pic.jpg'
   import darci_animal_pic from '../images/darci_animal_pic.jpg'
